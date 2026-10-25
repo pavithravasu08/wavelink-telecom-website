@@ -1,0 +1,150 @@
+
+    
+        
+        :root {
+            --navy: #0d2443;
+            --blue: #1769e0;
+            --cyan: #3ad0e9;
+            --light: #eef5ff;
+            --ink: #182b44;
+            --muted: #61728a;
+            --line: #dce6f1;
+            --white: #fff;
+            --shadow: 0 12px 32px rgba(13, 36, 67, 0.09);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+/* body */
+        body.bg-white {
+            min-height: 100vh;
+            background: var(--light);
+            color: var(--ink);
+            font-family: "Segoe UI", Arial, sans-serif;
+        }
+
+        .text-\[\#17123a\] {
+            color: var(--navy);
+        }
+
+        .text-\[\#5926db\] {
+            color: var(--blue);
+        }
+
+        .text-\[\#ff8a6b\] {
+            color: var(--cyan);
+        }
+
+        .bg-\[\#5b2bd9\] {
+            background-color: var(--blue);
+        }
+
+        .bg-\[\#F0F0F0\] {
+            /* background-color: var(--light); */
+            background-color: #F0F0F0;
+            
+        }
+
+        .h-\[150vh\] {
+            height: 150vh;
+            background: radial-gradient(ellipse at 50% 35%, rgba(58, 208, 233, 0.12), transparent 55%);
+        }
+
+        .hover\:text-\[\#5b2bd9\]:hover {
+            color: var(--blue);
+        }
+
+        .hover\:bg-\[\#4a20b8\]:hover {
+            background-color: var(--navy);
+        }
+
+        .hover\:border-\[\#17123a\]:hover {
+            border-color: var(--blue);
+        }
+
+        header {
+            border-bottom: 1px solid var(--line);
+            transition: box-shadow 0.25s ease;
+        }
+
+        header a,
+        footer a {
+            transition: color 0.2s ease, background-color 0.2s ease;
+        }
+
+        header nav a:hover,
+        footer a:hover {
+            color: var(--blue);
+        }
+
+        header button {
+            border-color: var(--line);
+            color: var(--navy);
+            transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+        }
+
+        header button:hover {
+            border-color: var(--blue);
+        }
+
+        #login {
+            border: 0;
+            box-shadow: 0 6px 16px rgba(23, 105, 224, 0.22);
+        }
+
+        #login:hover {
+            background-color: var(--navy);
+        }
+
+        #mobileMenu {
+            border-color: var(--line);
+        }
+
+        body>footer {
+            border-top: 1px solid var(--line);
+            color: var(--ink);
+        }
+
+        footer h1,
+        footer h2 {
+            color: var(--navy);
+        }
+
+        footer .text-gray-500 {
+            color: var(--muted);
+        }
+
+        footer ul a {
+            color: var(--muted);
+        }
+
+        footer ul a:hover {
+            color: var(--blue);
+        }
+
+        footer .flex.gap-4 a {
+            border: 1px solid var(--line);
+            box-shadow: 0 4px 12px rgba(13, 36, 67, 0.06);
+        }
+
+        footer>footer {
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        footer>footer .text-gray-600 {
+            color: rgba(255, 255, 255, 0.78);
+        }
+
+        footer>footer .border-gray-300 {
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        footer>footer a {
+            color: var(--white);
+        }
+
+        footer>footer a:hover {
+            color: var(--cyan);
+        }

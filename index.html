@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="WaveLink - a student-built telecom demo website featuring broadband, mobile plans and support.">
+
+    <title>Broadband, Mobile &amp; Digital Services | WaveLink</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <link rel="stylesheet" href="headfoot.css">
+
+    <style>
+        
+        @media (min-width: 1024px) {
+            #header nav.hidden {
+                display: flex !important;
+            }
+        }
+
+        @media (min-width: 640px) {
+            #header button.hidden {
+                display: block !important;
+            }
+        }
+
+        #header,
+        body>footer {
+            font-family: "Segoe UI", Arial, sans-serif;
+            line-height: 1.5;
+        }
+
+        #header {
+            color: var(--navy);
+        }
+
+        #header #login {
+            background-color: var(--blue, #1769e0);
+            color: #fff;
+        }
+
+        #header #login:hover {
+            background-color: var(--navy, #0d2443);
+        }
+
+        #header h1,
+        #header h2,
+        body>footer h1,
+        body>footer h2 {
+            font-family: inherit;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header id="header" class="sticky top-0 z-50 bg-white">
+
+        <div class="max-w-6xl mx-auto px-4 h-20 flex items-center justify-between">
+
+            <a href="index.html" aria-label="WaveLink home" class="flex items-center">
+                <img src="images/wavelink-logo.png" alt="WaveLink logo" class="w-36 h-auto" style="max-height:64px;object-fit:contain;">
+            </a>
+
+            <nav class="hidden lg:flex items-center gap-8 font-bold text-sm">
+                <a href="index.html" class="hover:text-[#5b2bd9]">Home</a>
+                <a href="broadband.html" class="hover:text-[#5b2bd9]">Broadband</a>
+                <a href="mobile.html" class="hover:text-[#5b2bd9]">Mobile Plans</a>
+                <a href="contact.html" class="hover:text-[#5b2bd9]">Support</a>
+                <a href="package.html" class="hover:text-[#5b2bd9]">Wave Connect</a>
+            </nav>
+
+            <div class="flex items-center gap-3">
+                <a href="faq.html#ct" class="hidden sm:block border border-gray-300 rounded-full px-5 py-2 font-bold text-sm hover:border-[#17123a]">Contact</a>
+                <a href="register.html" id="login" class="bg-[#5b2bd9] text-white rounded-full px-5 py-2 font-bold text-sm hover:bg-[#4a20b8]">Log in</a>
+
+                <button id="menuBtn" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mobileMenu" class="lg:hidden border border-gray-300 rounded-full w-10 h-10 text-xl">
+                    ☰
+                </button>
+            </div>
+        </div>
+
+        <div id="mobileMenu" class="hidden lg:hidden border-t border-gray-200 px-4 pb-4">
+            <a href="index.html" class="mobile-link block py-3 font-bold">Home</a>
+            <a href="broadband.html" class="mobile-link block py-3 font-bold">Broadband</a>
+            <a href="mobile.html" class="mobile-link block py-3 font-bold">Mobile Plans</a>
+            <a href="contact.html" class="mobile-link block py-3 font-bold">Support</a>
+            <a href="package.html" class="mobile-link block py-3 font-bold">Wave Connect</a>
+
+        </div>
+
+    </header>
+
+    <main>
+
+        <section class="hero">
+            <div class="container hero-inner">
+
+                <div>
+                    <span class="eyebrow">
+                        The next wave of connectivity
+                    </span>
+
+                    <h1>
+                        Fast internet.<br>
+                        More possibilities.
+                    </h1>
+
+                    <p>
+                        Explore flexible broadband and mobile packages
+                        designed for streaming, gaming and everything
+                        in between.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a href="broadband.html" class="btn btn-light">
+                            Find broadband plans →
+                        </a>
+
+                        <a href="mobile.html" class="btn btn-outline"
+                            style="color: black; border-color: #fff;">
+                            Explore mobile plans
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-art" aria-hidden="true">
+                    <div class="orbit"></div>
+                    <div class="hero-device">≈</div>
+
+                    <div class="float-chip chip-a">
+                        ⚡ Up to 900 Mbps
+                    </div>
+
+                    <div class="float-chip chip-b">
+                        ✓ Unlimited data
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <div class="container stats">
+
+            <div class="stat">
+                <strong>900 Mbps</strong>
+                <span>Top demo fibre speed</span>
+            </div>
+
+            <div class="stat">
+                <strong>4G / 5G</strong>
+                <span>Sample mobile plans</span>
+            </div>
+
+            <div class="stat">
+                <strong>24 / 7</strong>
+                <span>Explore online help</span>
+            </div>
+
+        </div>
+
+        <section class="section">
+            <div class="container">
+
+                <div class="section-head">
+                    <span class="eyebrow">Discover WaveLink</span>
+
+                    <h2>Everything you need to stay connected</h2>
+
+                    <p class="muted">
+                        Explore our sample services and interactive tools.
+                    </p>
+                </div>
+
+                <div class="cards">
+
+                    <article class="card">
+                        <div class="card-icon">🌐</div>
+
+                        <h3>Home Broadband</h3>
+
+                        <p class="muted">
+                            Find a plan that fits your home,
+                            from browsing to gaming.
+                        </p>
+
+                        <a href="broadband.html" class="btn btn-outline">
+                            Browse broadband →
+                        </a>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-icon">📱</div>
+
+                        <h3>Mobile &amp; SIM</h3>
+
+                        <p class="muted">
+                            Compare sample data allowances
+                            and monthly prices.
+                        </p>
+
+                        <a href="mobile.html" class="btn btn-outline">
+                            View mobile plans →
+                        </a>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-icon">💬</div>
+
+                        <h3>Help &amp; Support</h3>
+
+                        <p class="muted">
+                            Search common questions or try
+                            our validated contact form.
+                        </p>
+
+                        <a href="contact.html" class="btn btn-outline">
+                            Get support →
+                        </a>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="background: #eef5ff;">
+            <div class="container split">
+
+                <div>
+                    <span class="eyebrow">Bundle builder</span>
+
+                    <h2>Build your perfect package</h2>
+
+                    <p class="muted">
+                        Choose broadband, mobile and optional TV
+                        to see your estimated monthly total instantly.
+                    </p>
+
+                    <div class="calculator">
+
+                        <div class="calculator-fields">
+
+                            <div class="field">
+                                <label for="calc-broadband">
+                                    Broadband
+                                </label>
+
+                                <select id="calc-broadband">
+                                    <option value="299">Fibre 50 — ₹299</option>
+                                    <option value="349">Fibre 100 — ₹349</option>
+                                    <option value="499">Fibre 300 — ₹499</option>
+                                    <option value="549">Fibre 500 — ₹549</option>
+                                    <option value="699">GigaWave 900 — ₹699</option>
+                                </select>
+                            </div>
+
+                            <div class="field">
+                                <label for="calc-mobile">
+                                    Mobile
+                                </label>
+
+                                <select id="calc-mobile">
+                                    <option value="0">No mobile — ₹0</option>
+                                    <option value="99">Starter — ₹99</option>
+                                    <option value="249">Everyday — ₹249</option>
+                                    <option value="349">Plus — ₹349</option>
+                                    <option value="449">Max — ₹449</option>
+                                </select>
+                            </div>
+
+                            <div class="field">
+                                <label for="calc-tv">
+                                    Optional TV
+                                </label>
+
+                                <label class="check-row">
+                                    <input type="checkbox" id="calc-tv">
+                                    Add TV +₹199
+                                </label>
+                            </div>
+
+                        </div>
+
+                        <p class="total" id="calc-total" aria-live="polite">
+                            ₹299 / month
+                        </p>
+
+                        <p class="muted" id="calc-breakdown"></p>
+
+                        <p class="subtle">
+                            Illustrative monthly estimates;
+                            no checkout is available.
+                        </p>
+
+                    </div>
+                </div>
+
+                <div class="banner" id="availability">
+
+                    <span class="eyebrow" style="color: #a9f4ff;">
+                        Availability checker
+                    </span>
+
+                    <h2>Check your area</h2>
+
+                    <p>
+                        Try our sample postcode checker.
+                        This is a classroom demonstration,
+                        not a real network coverage lookup.
+                    </p>
+
+                    <form class="availability" id="postcode-form">
+
+                        <input type="text" id="postcode"
+                            aria-label="UK postcode"
+                            placeholder="e.g. SW1A 1AA" required>
+
+                        <button type="submit" class="btn btn-light">
+                            Check demo
+                        </button>
+
+                    </form>
+
+                    <p id="postcode-result" aria-live="polite"
+                        style="margin-top: 15px;">
+                    </p>
+
+                    <div class="notice" style="color: #6e4d00;">
+                        Demo only: results are based on a short
+                        fictional list of postcode prefixes.
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+
+                <div class="section-head">
+                    <span class="eyebrow">Why WaveLink</span>
+                    <h2>Built around your digital life</h2>
+                </div>
+
+                <div class="cards">
+
+                    <article class="card">
+                        <div class="card-icon">⚡</div>
+
+                        <h3>Speed that keeps up</h3>
+
+                        <p class="muted">
+                            Compare plans by speed and budget
+                            using live filters.
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-icon">🛡️</div>
+
+                        <h3>Simple choices</h3>
+
+                        <p class="muted">
+                            Clear sample pricing and easy
+                            side-by-side comparisons.
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-icon">🤝</div>
+
+                        <h3>Support made easy</h3>
+
+                        <p class="muted">
+                            Search FAQs and validate a message
+                            before submitting.
+                        </p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-[#F0F0F0] px-6 py-10">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-10 " style="margin-left: 7%;">
+
+            <div>
+                <img src="images/wavelink-logo.png" alt="WaveLink logo" style="width:160px;height:auto;margin-bottom:12px;">
+
+                <p class="text-gray-500  mb-6">
+                    As a communications provider, using personal information is fundamental to what we do
+
+                </p>
+
+                <div class="flex gap-4">
+                    <a href="https://www.instagram.com/wavelink_6?cplk=MXE0NmtkM2RsZmFhOQ=="
+                        class="bg-white w-10 h-10 rounded-lg flex items-center justify-center">
+                        <img class="w-12" src="images/instagram.png" alt="">
+                    </a>
+
+                    <a href="https://github.com/pavithravasu08/wavelink-telecom-website.git" class="bg-white  w-10 h-10 rounded-lg flex items-center justify-center">
+                        <img class="w-12" src="images/github-sign.png" alt="">
+                    </a>
+
+                    <a href="https://www.facebook.com/share/1C3fV1Ym6u/"
+                        class="bg-white rounded-2xl   w-11 h-11 flex items-center justify-center">
+                        <img class="w-12" src="images/social-media.png" alt="">
+                    </a>
+
+                </div>
+            </div>
+
+            <div>
+                <h2 class=" text-lg mb-8">COMPANY</h2>
+                <ul class="space-y-5 text-gray-500">
+                    <li><a href="faq.html">About Us</a></li>
+                    <li><a href="faq.html#history">History of WL</a></li>
+                    <li><a href="faq.html#history">Works</a></li>
+                    <li><a href="faq.html#career">Career</a></li>
+                </ul>
+
+                <h2 class=" text-lg mt-8 mb-8">EXPLORE</h2>
+                <ul class="space-y-5 text-gray-500">
+                    <li><a href="broadband.html">Broadband</a></li>
+                    <li><a href="package.html">OTT</a></li>
+                    <li><a href="mobile.html">Mobile</a></li>
+                    <li><a href="index.html">Explore plans</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h1 class=" text-lg mb-8">HELP</h1>
+                <ul class="space-y-5 text-gray-500">
+                    <li><a href="contact.html">Help Centre</a></li>
+                    <li><a href="faq.html#ct">Contact Us</a></li>
+                    <li><a href="contact.html">Query section</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h1 class="gap-10 text-lg mb-8">FAQ</h1>
+                <ul class="space-y-5 text-gray-500">
+                    <li><a href="index.html">Account</a></li>
+                    <li><a href="faq.html#qanda">Q&A</a></li>
+                    <li><a href="package.html">Offers</a></li>
+                    <li><a href="broadband.html#explore">Collection</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="text-gray-600 px-6 md:px-16 py-10">
+
+            <div class="border-t border-gray-300 pt-8">
+
+                <p class="mb-8">
+                    © 2026 Team Hexa. Made to bring us closer.
+                </p>
+
+                <div class="flex flex-wrap gap-2 ">
+                    <a href="#" class="hover:text-white">Privacy</a>
+                    <span>·</span>
+
+                    <a href="#" class="hover:text-white">Terms</a>
+                    <span>·</span>
+
+                    <a href="#" class="hover:text-white">
+                        Accessibility
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="headfoot.js"></script>
+
+    <script src="js/main.js"></script>
+    <script src="js/calculator.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,720 @@
+/*PACKAGE CALCULATOR SECTION*/
+.section {
+    padding: 60px 20px;
+}
+
+.section[style*="#eef5ff"] {
+    background: #eef5ff ;
+}
+
+.container {
+    width: 100%;
+    max-width: 1160px;
+    margin: 0 auto;
+}
+
+.split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+/*HEADINGS AND TEXT */
+
+.eyebrow {
+    display: inline-block;
+    margin-bottom: 10px;
+    color: #3169a8;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.section h2 {
+    margin: 0 0 18px;
+    color: #172b46;
+    font-size: 36px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.muted {
+    color: #718096;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.subtle {
+    color: #718096;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* ==============================
+   CALCULATOR
+============================== */
+
+.calculator {
+    margin-top: 30px;
+}
+
+.calculator-fields {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    align-items: start;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 0;
+}
+
+/* Dropdown fields */
+
+.field select {
+    width: 100%;
+    min-width: 0;
+    padding: 14px 12px;
+    border: 1px solid #dce4ee;
+    border-radius: 11px;
+    outline: none;
+    background: #ffffff;
+    color: #26374d;
+    font-family: inherit;
+    font-size: 14px;
+    cursor: pointer;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.field select:focus {
+    border-color: #2474d8;
+    box-shadow: 0 0 0 3px rgba(36, 116, 216, 0.12);
+}
+
+/* Optional TV checkbox */
+
+.check-row {
+    display: none;
+    align-items: center;
+    gap: 9px;
+    margin-top: 4px;
+    color: #26374d;
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.check-row input {
+    width: 18px;
+    height: 18px;
+    accent-color: #2169cf;
+    cursor: pointer;
+}
+
+/* Monthly total */
+
+.total {
+    margin: 22px 0 4px;
+    color: #246bd0;
+    font-size: 38px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+#calc-breakdown {
+    margin: 5px 0 10px;
+    font-size: 14px;
+}
+
+/* ==============================
+   AVAILABILITY CHECKER
+============================== */
+
+.banner {
+    padding: 42px;
+    border-radius: 24px;
+    background: linear-gradient(
+        120deg,
+        #103d70 0%,
+        #1762b7 65%,
+        #1263c7 100%
+    );
+    color: #ffffff;
+    box-shadow: 0 12px 30px rgba(20, 72, 130, 0.08);
+}
+
+.banner .eyebrow {
+    color: #a9f4ff;
+}
+
+.banner h2 {
+    margin: 0 0 16px;
+    color: #ffffff;
+    font-size: 38px;
+    font-weight: 800;
+}
+
+.banner > p:not(#postcode-result) {
+    margin: 0 0 22px;
+    color: #dceaff;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/* Postcode form */
+
+.availability {
+    display: flex;
+    align-items: stretch;
+    gap: 12px;
+    width: 100%;
+}
+
+.availability input {
+    flex: 1;
+    width: 100%;
+    min-width: 0;
+    padding: 17px 14px;
+    border: 1px solid #dbe5f2;
+    border-radius: 11px;
+    outline: none;
+    background: #ffffff;
+    color: #26374d;
+    font-family: inherit;
+    font-size: 14px;
+}
+
+.availability input::placeholder {
+    color: #9aa4b2;
+}
+
+.availability input:focus {
+    border-color: #9bc6ff;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.15);
+}
+
+/* Check demo button */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 11px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.btn-light {
+    flex-shrink: 0;
+    background: #ffffff;
+    color: #26374d;
+}
+
+.btn-light:hover {
+    background: #eaf3ff;
+    transform: translateY(-2px);
+}
+
+.btn:focus-visible {
+    outline: 3px solid #9bc6ff;
+    outline-offset: 3px;
+}
+
+/* Availability result */
+
+#postcode-result {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.7;
+}
+
+/* Demo notice */
+
+.notice {
+    margin-top: 16px;
+    padding: 15px 16px;
+    border-radius: 11px;
+    background: #fff4d5;
+    color: #6e4d00;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+/* ==============================
+   RESPONSIVE DESIGN
+============================== */
+
+/* Tablets */
+
+@media (max-width: 900px) {
+    .section {
+        padding: 45px 24px;
+    }
+
+    .split {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .section h2 {
+        font-size: 32px;
+    }
+
+    .banner {
+        padding: 32px;
+    }
+
+    .banner h2 {
+        font-size: 34px;
+    }
+}
+
+/* Mobile phones */
+
+@media (max-width: 600px) {
+    .section {
+        padding: 35px 16px;
+    }
+
+    .split {
+        gap: 28px;
+    }
+
+    .section h2 {
+        font-size: 27px;
+    }
+
+    .calculator-fields {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .field select {
+        padding: 14px;
+    }
+
+    .total {
+        font-size: 32px;
+    }
+
+    .banner {
+        padding: 24px 18px;
+        border-radius: 18px;
+    }
+
+    .banner h2 {
+        font-size: 29px;
+    }
+
+    .availability {
+        flex-direction: column;
+    }
+
+    .availability input,
+    .availability button {
+        width: 100%;
+        min-height: 50px;
+    }
+
+    .check-row {
+        white-space: normal;
+    }
+
+    .notice {
+        font-size: 12px;
+    }
+}/* Streaming Services */
+.streaming-services {
+    margin-top: 20px;
+    max-width: 520px;
+    padding: 15px;
+    background: #ffffff;
+    border: 1px solid #dce5f2;
+    border-radius: 12px;
+}
+
+.streaming-services h3 {
+    margin: 0 0 12px;
+    font-size: 18px;
+    color: #163c78;
+}
+
+.ott-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.ott-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px;
+    background: #f3f6fb;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.ott-item input {
+    width: 16px;
+    height: 16px;
+    accent-color: #2458a6;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    .ott-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Google Map - Rectangle Box */
+.map-box {
+    grid-column: 2;
+    margin-bottom: 100px;
+    width: 100%;
+    height: 380px;
+    margin-top: 50px;
+    padding: 15px;
+    background: #ffffff;
+    border: 1px solid #d6e3f5;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(20, 50, 90, 0.08);
+    box-sizing: border-box;
+}
+
+.map-box h3 {
+    font-size: 20px;
+    color: #12366b;
+    margin: 0 0 12px;
+}
+
+.map-box iframe {
+    width: 100%;
+    height: 305px;
+    display: block;
+    border: 0;
+    border-radius: 9px;
+}
+
+/* Responsive layout */
+@media (max-width: 900px) {
+    .map-box {
+        grid-column: 1;
+        height: 280px;
+        margin-top: 0;
+    }
+}
+
+
+/* =====================================
+   RESPONSIVE DESIGN - TABLETS
+===================================== */
+
+@media screen and (max-width: 1024px) {
+
+    .container {
+        width: 92%;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .container.split {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .calculator {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .banner {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 25px;
+    }
+
+    .calculator-fields {
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+
+    .map-box {
+        width: 100%;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    .map-box iframe {
+        display: block;
+        width: 100%;
+        height: 350px;
+        border: 0;
+    }
+
+    .streaming-services {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .ott-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .ott-item {
+        min-width: 0;
+        box-sizing: border-box;
+    }
+
+    .ott-item img {
+        max-width: 55px;
+        height: auto;
+        object-fit: contain;
+    }
+}
+
+
+/* =====================================
+   RESPONSIVE DESIGN - MOBILE
+===================================== */
+
+@media screen and (max-width: 600px) {
+
+    * {
+        box-sizing: border-box;
+    }
+
+    .section {
+        padding: 25px 0;
+    }
+
+    .container {
+        width: 100%;
+        padding: 0 12px;
+        margin: 0 auto;
+    }
+
+    .container.split {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 20px;
+    }
+
+    .container.split > div {
+        min-width: 0;
+        width: 100%;
+    }
+
+    /* Headings and text */
+
+    h2 {
+        font-size: 25px;
+        line-height: 1.25;
+    }
+
+    h3 {
+        font-size: 19px;
+    }
+
+    p {
+        overflow-wrap: anywhere;
+    }
+
+    /* Package calculator */
+
+    .calculator {
+        width: 100%;
+        padding: 15px;
+        border-radius: 14px;
+    }
+
+    .calculator-fields {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 14px;
+    }
+
+    .field {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .field select,
+    .field input:not([type="checkbox"]) {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    /* TV checkbox */
+
+    .check-row {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    /* OTT services */
+
+    .streaming-services {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .ott-list {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 10px;
+    }
+
+    .ott-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        width: 100%;
+        min-width: 0;
+        padding: 12px;
+        border-radius: 10px;
+    }
+
+    .ott-item input[type="checkbox"] {
+        flex-shrink: 0;
+    }
+
+    .ott-item img {
+        width: 42px !important;
+        max-width: 42px;
+        height: 42px;
+        object-fit: contain;
+        flex-shrink: 0;
+    }
+
+    .ott-item span {
+        min-width: 0;
+        font-size: 14px;
+        overflow-wrap: anywhere;
+    }
+
+    /* Total amount */
+
+    .total {
+        font-size: 23px;
+        line-height: 1.4;
+        overflow-wrap: anywhere;
+    }
+
+    /* Availability checker */
+
+    .banner {
+        width: 100%;
+        min-width: 0;
+        padding: 20px 14px;
+        border-radius: 18px;
+        overflow: hidden;
+    }
+
+    .banner h2 {
+        font-size: 27px;
+    }
+
+    /* Postcode input and button */
+
+    .availability {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .availability input,
+    .availability button {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+        min-height: 48px;
+        box-sizing: border-box;
+    }
+
+    /* Result message */
+
+    #postcode-result,
+    .notice {
+        width: 100%;
+        overflow-wrap: anywhere;
+    }
+
+    /* Google map */
+
+    .map-box {
+        width: 100%;
+        min-width: 0;
+        padding: 10px;
+        border-radius: 12px;
+        overflow: hidden;
+    }
+
+    .map-box h3 {
+        margin-bottom: 12px;
+    }
+
+    .map-box iframe {
+        display: block;
+        width: 100%;
+        height: 280px;
+        max-width: 100%;
+        border: 0;
+        border-radius: 10px;
+    }
+}
+
+
+/* =====================================
+   EXTRA SMALL MOBILE SCREENS
+===================================== */
+
+@media screen and (max-width: 360px) {
+
+    .container {
+        padding: 0 8px;
+    }
+
+    .banner {
+        padding: 16px 10px;
+    }
+
+    .calculator {
+        padding: 12px;
+    }
+
+    .banner h2 {
+        font-size: 23px;
+    }
+
+    .map-box iframe {
+        height: 240px;
+    }
+
+    .ott-item {
+        gap: 8px;
+        padding: 9px;
+    }
+}

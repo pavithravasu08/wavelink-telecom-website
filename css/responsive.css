@@ -1,0 +1,167 @@
+
+/* =====================================
+   TABLET VIEW - 900px and below
+   ===================================== */
+
+@media (max-width: 900px) {
+
+    /* Display 2 cards per row */
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Hero section with 2 columns */
+    .hero-inner {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Search and filter fields */
+    .toolbar {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Package calculator fields */
+    .calculator-fields {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+/* =====================================
+   MOBILE VIEW - 700px and below
+   ===================================== */
+
+@media (max-width: 700px) {
+
+    /* Show hamburger menu */
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Hide desktop navigation */
+    .nav-links {
+        display: none;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 76px;
+        background: #fff;
+        padding: 20px 5%;
+        box-shadow: var(--shadow);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 18px;
+    }
+
+    /* Display navigation when menu opens */
+    .nav-links.open {
+        display: flex;
+    }
+
+    /* Full-width navigation button */
+    .nav-links .btn {
+        width: 100%;
+    }
+
+    /* Change two-column layouts to one column */
+    .hero-inner,
+    .split,
+    .form-layout {
+        grid-template-columns: 1fr;
+    }
+
+    /* Hero section spacing */
+    .hero-inner {
+        padding: 60px 0;
+    }
+
+    /* Hero illustration */
+    .hero-art {
+        min-height: 280px;
+    }
+
+    .orbit {
+        width: 220px;
+        height: 220px;
+    }
+
+    .hero-device {
+        width: 170px;
+        height: 205px;
+        font-size: 5rem;
+    }
+
+    /* Floating information chips */
+    .chip-a {
+        right: 5px;
+    }
+
+    .chip-b {
+        left: 5px;
+    }
+
+    /* Statistics in one column */
+    .stats {
+        grid-template-columns: 1fr;
+        margin-top: 22px;
+    }
+
+    /* Display one card per row */
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    /* Reduce section spacing */
+    .section {
+        padding: 48px 0;
+    }
+
+    /* Stack filters and calculator fields */
+    .toolbar,
+    .calculator-fields {
+        grid-template-columns: 1fr;
+    }
+
+    /* Footer with two columns */
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* First footer section takes full width */
+    .footer-grid > div:first-child {
+        grid-column: 1 / -1;
+    }
+
+    /* Allow horizontal scrolling for comparison */
+    .comparison {
+        overflow-x: auto;
+    }
+
+    /* Reduce banner padding */
+    .banner {
+        padding: 28px;
+    }
+}
+
+
+/* =====================================
+   SMALL MOBILE VIEW - 380px and below
+   ===================================== */
+
+@media (max-width: 380px) {
+
+    /* Footer in one column */
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Stack hero buttons vertically */
+    .hero-actions {
+        flex-direction: column;
+    }
+
+    /* Make hero buttons full width */
+    .hero-actions .btn {
+        width: 100%;
+    }
+}

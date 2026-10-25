@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WAVE LINK - Register</title>
+    <!-- Tailwind CSS v2 (CDN) -->
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+    <!-- Tailwind v2 has no [arbitrary values], opacity slash, cyan colors, backdrop-blur or active:scale; these rules give the same classes the same result -->
+    <style>
+        .bg-white\/95{background-color:rgba(255,255,255,.95)}
+        .backdrop-blur{-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+        .to-cyan-400{--tw-gradient-to:#22d3ee}
+        .to-cyan-500{--tw-gradient-to:#06b6d4}
+        .hover\:scale-\[1\.02\]:hover{transform:scale(1.02)}
+        .active\:scale-95:active{transform:scale(.95)}
+    </style>
+
+    <style>
+        .nameerror,
+        .passworderror {
+            color: red;
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-600 via-blue-600 to-cyan-400 p-4">
+
+    <div class="w-full max-w-md bg-white/95 backdrop-blur rounded-3xl shadow-2xl p-8 sm:p-10">
+
+       
+        <div class="text-center mb-6">
+            <div class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-indigo-600 to-cyan-400 shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-9 w-9 text-white" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M2 12c2-4 4-4 6 0s4 4 6 0 4-4 6 0M2 18c2-4 4-4 6 0s4 4 6 0 4-4 6 0M2 6c2-4 4-4 6 0s4 4 6 0 4-4 6 0" />
+                </svg>
+            </div>
+            <h1 class="text-4xl font-extrabold tracking-widest bg-gradient-to-r from-indigo-600 to-cyan-500 bg-clip-text text-transparent">
+                WAVE LINK
+            </h1>
+        </div>
+
+        <p class="text-center text-gray-500 text-sm mb-8">
+            Please register to continue. Enter your user name and password below.
+        </p>
+
+        <form action="" class="space-y-5">
+            <div>
+                <label for="name" class="block text-sm font-semibold text-gray-700 mb-1">User Name:</label>
+                <input type="text" placeholder="Name" id="name"
+                    class="w-full rounded-xl border border-gray-300 bg-gray-50 px-4 py-3 text-gray-800 placeholder-gray-400 outline-none transition focus:border-indigo-500 focus:bg-white focus:ring-4 focus:ring-indigo-100">
+                <span class="nameerror mt-1 text-sm">User name must contain at least one letter</span>
+            </div>
+
+            <div>
+                <label for="password" class="block text-sm font-semibold text-gray-700 mb-1">Password:</label>
+                <input type="password" placeholder="Password" id="password"
+                    class="w-full rounded-xl border border-gray-300 bg-gray-50 px-4 py-3 text-gray-800 placeholder-gray-400 outline-none transition focus:border-indigo-500 focus:bg-white focus:ring-4 focus:ring-indigo-100">
+                <span class="passworderror mt-1 text-sm">Password must be at least 5 characters</span>
+            </div>
+
+            <input type="submit" id="submit" value="Register"
+                class="w-full cursor-pointer rounded-xl bg-gradient-to-r from-indigo-600 to-cyan-500 py-3 font-bold tracking-wide text-white shadow-lg transition hover:scale-[1.02] hover:shadow-xl active:scale-95">
+        </form>
+
+        <p class="mt-6 text-center text-xs text-gray-400">&copy; WAVE LINK. All rights reserved.</p>
+    </div>
+
+    
+
+    <script>
+        var submit = document.getElementById("submit")
+
+        submit.addEventListener("click", function (event) {
+            event.preventDefault()
+            var name = document.getElementById("name")
+            var password = document.getElementById("password")
+
+            var nameregex = /[a-zA-Z]/
+            var passwordregex = /^.{5,}$/
+            var validate = true
+
+            if (nameregex.test(name.value) == false) {
+                document.querySelector(".nameerror").style.display = "inline"
+                validate = false
+            }
+            else {
+                document.querySelector(".nameerror").style.display = "none"
+            }
+
+            if (passwordregex.test(password.value) == false) {
+                document.querySelector(".passworderror").style.display = "inline"
+                validate = false
+            }
+            else {
+                document.querySelector(".passworderror").style.display = "none"
+            }
+
+            if (validate == true) {
+                alert("Welcome to our TEAM 6 Project")
+                window.location.href="afterreg.html"
+            }
+        })
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="WaveLink - Explore affordable mobile and SIM offers." name="description"/>
+<title>Mobile &amp; SIM Offers | WaveLink</title>
+
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+
+<link href="css/mobile.css" rel="stylesheet">
+
+<link href="headfoot.css" rel="stylesheet"/>
+
+<style>@media (min-width: 1024px) { #header nav.hidden { display:flex !important; } }
+@media (min-width: 640px) { #header a.hidden.sm\:block { display:block !important; } }
+#header, body > footer { font-family: "Segoe UI", Arial, sans-serif; line-height:1.5; }
+#header { color:var(--navy, #0d2443); }
+#header #mobileMenu.hidden { display:none !important; }
+#header #mobileMenu:not(.hidden) { display:block !important; }
+@media (min-width: 1024px) { #header #mobileMenu:not(.hidden) { display:none !important; } }
+#header img, body > footer img { vertical-align:middle; }
+</style></head>
+<body>
+
+<header class="sticky top-0 z-50 bg-white" id="header">
+<div class="max-w-6xl mx-auto px-4 h-20 flex items-center justify-between">
+
+<a aria-label="WaveLink home" class="text-2xl font-extrabold tracking-tight" href="afterreg.html"><img alt="WaveLink logo" src="images/wavelink-logo.png" style="height:48px;width:auto;max-width:170px;object-fit:contain;"/></a>
+<nav class="hidden lg:flex items-center gap-8 font-bold text-sm">
+<a class="hover:text-[#5b2bd9]" href="afterreg.html">Home</a>
+<a class="hover:text-[#5b2bd9]" href="arbroadband.html">Broadband</a>
+<a aria-current="page" class="hover:text-[#5b2bd9]" href="armobile.html">Mobile Plans</a>
+<a class="hover:text-[#5b2bd9]" href="arcontact.html">Support</a>
+<a class="hover:text-[#5b2bd9]" href="arpackage.html">Wave Connect</a>
+</nav>
+
+<div class="flex items-center gap-3">
+<a class="hidden sm:block border border-gray-300 rounded-full px-5 py-2 font-bold text-sm hover:border-[#17123a]" href="arcontact.html">Help</a>
+
+<img alt="User profile" src="images/user.png" width="36"/>
+<button aria-controls="mobileMenu" aria-expanded="false" aria-label="Toggle navigation" class="lg:hidden border border-gray-300 rounded-full w-10 h-10 text-xl" id="menuBtn" type="button">
+                    ☰
+                </button>
+</div>
+</div>
+
+<div class="hidden lg:hidden border-t border-gray-200 px-4 pb-4" id="mobileMenu">
+<a class="mobile-link block py-3 font-bold" href="afterreg.html">Home</a>
+<a class="mobile-link block py-3 font-bold" href="arbroadband.html">Broadband</a>
+<a class="mobile-link block py-3 font-bold" href="armobile.html">Mobile Plans</a>
+<a class="mobile-link block py-3 font-bold" href="arcontact.html">Support</a>
+<a class="mobile-link block py-3 font-bold" href="arpackage.html">Wave Connect</a>
+</div>
+</header>
+
+<main class="mp-page">
+
+<section class="mp-hero">
+<div class="mp-wrap">
+<span class="mp-eyebrow">Explore Our Plans</span>
+<h1>Mobile &amp; SIM Offers</h1>
+<p>Stay connected with affordable mobile plans. Find the perfect package for your needs.</p>
+<div class="mp-stats">
+<div><strong>8</strong><span>Plans</span></div>
+<div><strong>5G</strong><span>Ready</span></div>
+<div><strong>₹79</strong><span>Starting price</span></div>
+</div>
+</div>
+</section>
+
+<section class="mp-section" id="plans">
+<div class="mp-wrap">
+<span class="mp-eyebrow">Find Your Fit</span>
+<h2>Explore Packages</h2>
+
+<div class="mp-tabs" id="category-tabs">
+<button class="mp-tab active" data-category="all" type="button">All</button>
+<button class="mp-tab" data-category="Prepaid" type="button">Prepaid</button>
+<button class="mp-tab" data-category="Postpaid" type="button">Postpaid</button>
+<button class="mp-tab" data-category="Data Only" type="button">Data Only</button>
+<button class="mp-tab" data-category="favorites" type="button">♥ Favourites</button>
+</div>
+
+<div class="mp-toolbar">
+<div class="mp-field">
+<label for="plan-search">Search Plans</label>
+<input id="plan-search" placeholder="Search name or feature..." type="search"/>
+</div>
+<div class="mp-field">
+<label for="max-price">Maximum Monthly Price</label>
+<select id="max-price">
+<option value="">Any Price</option>
+<option value="100">Up to ₹100</option>
+<option value="150">Up to ₹150</option>
+<option value="200">Up to ₹200</option>
+<option value="250">Up to ₹250</option>
+</select>
+</div>
+<div class="mp-field">
+<label for="plan-sort">Sort By</label>
+<select id="plan-sort">
+<option value="default">Recommended</option>
+<option value="price-asc">Price: Low to High</option>
+<option value="price-desc">Price: High to Low</option>
+<option value="data-desc">Data: High to Low</option>
+</select>
+</div>
+<button class="mp-btn mp-btn-light" id="reset-btn" type="button">Reset</button>
+</div>
+
+<div class="mp-results-line">
+<strong aria-live="polite" id="result-count"></strong>
+<span>Demo prices in INR / month</span>
+</div>
+
+<div class="mp-cards" id="plan-grid"></div>
+
+<div class="mp-empty mp-hide" id="no-results">
+                    No plans match your filters. Try adjusting your search.
+                </div>
+
+<p class="mp-success mp-hide" id="selection-message" role="status"></p>
+</div>
+</section>
+
+<section class="mp-section mp-section-grey">
+<div class="mp-wrap">
+<span class="mp-eyebrow">Not sure?</span>
+<h2>Which plan is right for me?</h2>
+<div class="mp-finder">
+<div class="mp-field">
+<label for="usage-select">How much do you use your phone?</label>
+<select id="usage-select">
+<option value="">Choose one...</option>
+<option value="light">Light - calls, WhatsApp</option>
+<option value="medium">Medium - social media, some videos</option>
+<option value="heavy">Heavy - streaming, gaming, hotspot</option>
+</select>
+</div>
+<button class="mp-btn mp-btn-primary" id="finder-btn" type="button">Suggest a plan</button>
+</div>
+<p class="mp-finder-result mp-hide" id="finder-result"></p>
+</div>
+</section>
+
+<section class="mp-section">
+<div class="mp-wrap">
+<span class="mp-eyebrow">Quick Answers</span>
+<h2>Mobile Plan FAQs</h2>
+<details class="mp-faq">
+<summary>What is the difference between Prepaid and Postpaid?</summary>
+<p>Prepaid: you pay first and then use. Postpaid: you use first and pay a bill at the end of the
+                        month.</p>
+</details>
+<details class="mp-faq">
+<summary>Can I change my plan later?</summary>
+<p>Yes. You can switch to another plan when your current validity ends.</p>
+</details>
+<details class="mp-faq">
+<summary>What happens when my daily data finishes?</summary>
+<p>Your internet speed goes down to a basic speed until the next day.</p>
+</details>
+<details class="mp-faq">
+<summary>Are these real prices?</summary>
+<p>No. This is a student portfolio demo, so all prices and offers are fictional.</p>
+</details>
+</div>
+</section>
+
+<div aria-label="Plan details" aria-modal="true" class="mp-backdrop mp-hide" id="plan-modal" role="dialog">
+<div class="mp-modal">
+<button aria-label="Close plan details" class="mp-close" id="close-modal" type="button">×</button>
+<div id="modal-content"></div>
+</div>
+</div>
+</main>
+
+<footer class="bg-[#F0F0F0] px-6 py-10">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-10" style="margin-left: 7%;">
+
+<div>
+<a aria-label="WaveLink home" class="text-3xl font-extrabold mb-3" href="afterreg.html"><img alt="WaveLink logo" src="images/wavelink-logo.png" style="height:55px;width:auto;max-width:190px;object-fit:contain;"/></a>
+<p class="text-gray-500 mb-6">
+                    As a communications provider, using personal information is fundamental to what we do
+
+                </p>
+<div class="flex gap-4">
+<a class="bg-white w-10 h-10 rounded-lg flex items-center justify-center" href="https://www.instagram.com/wavelink_6?cplk=MXE0NmtkM2RsZmFhOQ==">
+<img alt="Instagram" class="w-12" src="images/instagram.png"/>
+</a>
+<a class="bg-white w-10 h-10 rounded-lg flex items-center justify-center" href="https://github.com/pavithravasu08/wavelink-telecom-website">
+<img alt="GitHub" class="w-12" src="images/github-sign.png"/>
+</a>
+<a class="bg-white rounded-2xl w-11 h-11 flex items-center justify-center" href="https://www.facebook.com/share/1C3fV1Ym6u/">
+<img alt="Facebook" class="w-12" src="images/social-media.png"/>
+</a>
+
+</div>
+</div>
+
+<div>
+<h2 class="text-lg mb-8">COMPANY</h2>
+<ul class="space-y-5 text-gray-500">
+<li><a href="faq.html">About Us</a></li>
+<li><a href="faq.html#history">History of WL</a></li>
+<li><a href="faq.html#history">Works</a></li>
+<li><a href="faq.html#career">Career</a></li>
+</ul>
+<h2 class="text-lg mt-8 mb-8">EXPLORE</h2>
+<ul class="space-y-5 text-gray-500">
+<li><a href="arbroadband.html">Broadband</a></li>
+<li><a href="faq.html">TV</a></li>
+<li><a href="armobile.html">Mobile</a></li>
+<li><a href="arpackage.html">Explore plans</a></li>
+</ul>
+</div>
+
+<div>
+<h1 class="text-lg mb-8">HELP</h1>
+<ul class="space-y-5 text-gray-500">
+<li><a href="arcontact.html">Help Centre</a></li>
+<li><a href="arcontact.html">Contact Us</a></li>
+<li><a href="arcontact.html">Query section</a></li>
+</ul>
+</div>
+
+<div>
+<h1 class="gap-10 text-lg mb-8">FAQ</h1>
+<ul class="space-y-5 text-gray-500">
+<li><a href="index.html">Account</a></li>
+<li><a href="faq.html#qanda">Q&amp;A</a></li>
+<li><a href="faq.html">Offers</a></li>
+<li><a href="faq.html">Collection</a></li>
+</ul>
+</div>
+</div>
+
+<div class="text-gray-600 px-6 md:px-16 py-10">
+<div class="border-t border-gray-300 pt-8">
+<p class="mb-8">
+                    © 2026 Wave Link. Made to bring us closer.
+                </p>
+<div class="flex flex-wrap gap-2">
+<span class="hover:text-white">Privacy</span>
+<span>·</span>
+<span class="hover:text-white">Terms</span>
+<span>·</span>
+<span class="hover:text-white">
+                        Accessibility
+                    </span>
+</div>
+</div>
+</div>
+</footer>
+
+
+<script src="headfoot.js"></script>
+
+<script src="js/mobile.js"></script>
+</body>
+</html>

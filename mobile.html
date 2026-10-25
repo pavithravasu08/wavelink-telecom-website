@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="WaveLink - Explore affordable mobile and SIM offers." name="description" />
+    <title>Mobile &amp; SIM Offers | WaveLink</title>
+
+    <!-- Tailwind (needed by the shared header/footer, same as index.html) -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+    <!-- Page CSS (must load AFTER Tailwind so .container etc. keep the mobile page look) -->
+    <link href="css/mobile.css" rel="stylesheet" />
+
+    <!-- Header / footer CSS (same file index.html uses) -->
+    <link rel="stylesheet" href="headfoot.css">
+
+    <style>
+        /* mobile.css has ".hidden { display:none !important }" which would permanently hide
+           the header's desktop nav (hidden lg:flex) and Help button (hidden sm:block). */
+        @media (min-width: 1024px) {
+            #header nav.hidden {
+                display: flex !important;
+            }
+        }
+
+        @media (min-width: 640px) {
+            #header button.hidden {
+                display: block !important;
+            }
+        }
+
+        /* Keep the same font, text colour and line-height the header/footer have on index.html
+           (mobile.css would otherwise apply DM Sans / Outfit / 1.6 line-height to them). */
+        #header,
+        body>footer {
+            font-family: "Segoe UI", Arial, sans-serif;
+            line-height: 1.5;
+        }
+
+        #header {
+            color: var(--navy);
+        }
+
+        #header h1,
+        #header h2,
+        body>footer h1,
+        body>footer h2 {
+            font-family: inherit;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===================== Header (copied from index.html) ===================== -->
+    <header id="header" class="sticky top-0 z-50 bg-white">
+
+        <div class="max-w-6xl mx-auto px-4 h-20 flex items-center justify-between">
+
+            <!-- Logo -->
+            <a href="#" class="text-2xl font-extrabold tracking-tight">
+                WAVE<span class="text-[#5926db]"> LINK</span><span class="text-[#ff8a6b]">.</span>
+                <!-- <h1 class=" text-3xl font-extrabold mb-3">WAVE LINK</h1> -->
+
+            </a>
+
+
+            <nav class="hidden lg:flex items-center gap-8 font-bold text-sm">
+                <a href="index.html" class="hover:text-[#5b2bd9]">Home</a>
+                <a href="broadband.html " class="hover:text-[#5b2bd9]">Broadband</a>
+                <a href="mobile.html" class="hover:text-[#5b2bd9]">Mobile Plans</a>
+                <a href="contact.html" class="hover:text-[#5b2bd9]">Support</a>
+                <a href="package.html" class="hover:text-[#5b2bd9]">Wave Connect</a>
+            </nav>
+
+            <!-- Buttons -->
+            <div class="flex items-center gap-3">
+                <a href="faq.html#ct"><button
+                    class="hidden sm:block border border-gray-300 rounded-full px-5 py-2 font-bold text-sm hover:border-[#17123a]">
+                    Help
+                </button></a>
+                <a href="register.html"><button id="login"
+                        class="bg-[#5b2bd9] text-white rounded-full px-5 py-2 font-bold text-sm hover:bg-[#4a20b8]">
+                        Log in
+                    </button></a>
+
+                <button id="menuBtn" class="lg:hidden border border-gray-300 rounded-full w-10 h-10 text-xl">
+                    ☰
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile menu (hidden at the start) -->
+        <div id="mobileMenu" class="hidden lg:hidden border-t border-gray-200 px-4 pb-4">
+            <a href="index.html" class="mobile-link block py-3 font-bold">Home</a>
+            <a href="broadband.html" class="mobile-link block py-3 font-bold">Broadband</a>
+            <a href="mobile.html" class="mobile-link block py-3 font-bold">Mobile Plans</a>
+            <a href="contact.html" class="mobile-link block py-3 font-bold">Support</a>
+            <a href="package.html" class="mobile-link block py-3 font-bold">Wave Connect</a>
+
+        </div>
+
+    </header>
+    <!-- ===================== /Header ===================== -->
+
+    <main class="mp-page">
+
+        <!-- 1. Hero banner -->
+        <section class="mp-hero">
+            <div class="mp-wrap">
+                <span class="mp-eyebrow">Explore Our Plans</span>
+                <h1>Mobile &amp; SIM Offers</h1>
+                <p>Stay connected with affordable mobile plans. Find the perfect package for your needs.</p>
+
+                <div class="mp-stats">
+                    <div><strong>8</strong><span>Plans</span></div>
+                    <div><strong>5G</strong><span>Ready</span></div>
+                    <div><strong>₹79</strong><span>Starting price</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Plans section -->
+        <section class="mp-section" id="plans">
+            <div class="mp-wrap">
+                <span class="mp-eyebrow">Find Your Fit</span>
+                <h2>Explore Packages</h2>
+
+                <!-- Category buttons (JS handles clicks) -->
+                <div class="mp-tabs" id="category-tabs">
+                    <button class="mp-tab active" data-category="all">All</button>
+                    <button class="mp-tab" data-category="Prepaid">Prepaid</button>
+                    <button class="mp-tab" data-category="Postpaid">Postpaid</button>
+                    <button class="mp-tab" data-category="Data Only">Data Only</button>
+                    <button class="mp-tab" data-category="favorites">♥ Favourites</button>
+                </div>
+
+                <!-- Search, price filter, sort -->
+                <div class="mp-toolbar">
+                    <div class="mp-field">
+                        <label for="plan-search">Search Plans</label>
+                        <input id="plan-search" type="search" placeholder="Search name or feature..." />
+                    </div>
+
+                    <div class="mp-field">
+                        <label for="max-price">Maximum Monthly Price</label>
+                        <select id="max-price">
+                            <option value="">Any Price</option>
+                            <option value="100">Up to ₹100</option>
+                            <option value="150">Up to ₹150</option>
+                            <option value="200">Up to ₹200</option>
+                            <option value="250">Up to ₹250</option>
+                        </select>
+                    </div>
+
+                    <div class="mp-field">
+                        <label for="plan-sort">Sort By</label>
+                        <select id="plan-sort">
+                            <option value="default">Recommended</option>
+                            <option value="price-asc">Price: Low to High</option>
+                            <option value="price-desc">Price: High to Low</option>
+                            <option value="data-desc">Data: High to Low</option>
+                        </select>
+                    </div>
+
+                    <button class="mp-btn mp-btn-light" id="reset-btn" type="button">Reset</button>
+                </div>
+
+                <!-- Result count -->
+                <div class="mp-results-line">
+                    <strong id="result-count" aria-live="polite"></strong>
+                    <span>Demo prices in INR / month</span>
+                </div>
+
+                <!-- Cards are created by mobile.js -->
+                <div class="mp-cards" id="plan-grid"></div>
+
+                <!-- Shown when nothing matches -->
+                <div class="mp-empty mp-hide" id="no-results">
+                    No plans match your filters. Try adjusting your search.
+                </div>
+
+                <!-- Message after choosing a plan -->
+                <p class="mp-success mp-hide" id="selection-message" role="status"></p>
+            </div>
+        </section>
+
+        <!-- 3. Plan finder (small quiz) -->
+        <section class="mp-section mp-section-grey">
+            <div class="mp-wrap">
+                <span class="mp-eyebrow">Not sure?</span>
+                <h2>Which plan is right for me?</h2>
+
+                <div class="mp-finder">
+                    <div class="mp-field">
+                        <label for="usage-select">How much do you use your phone?</label>
+                        <select id="usage-select">
+                            <option value="">Choose one...</option>
+                            <option value="light">Light - calls, WhatsApp</option>
+                            <option value="medium">Medium - social media, some videos</option>
+                            <option value="heavy">Heavy - streaming, gaming, hotspot</option>
+                        </select>
+                    </div>
+                    <button class="mp-btn mp-btn-primary" id="finder-btn" type="button">Suggest a plan</button>
+                </div>
+
+                <p class="mp-finder-result mp-hide" id="finder-result"></p>
+            </div>
+        </section>
+
+        <!-- 4. FAQ (works with NO JavaScript) -->
+        <section class="mp-section">
+            <div class="mp-wrap">
+                <span class="mp-eyebrow">Quick Answers</span>
+                <h2>Mobile Plan FAQs</h2>
+
+                <details class="mp-faq">
+                    <summary>What is the difference between Prepaid and Postpaid?</summary>
+                    <p>Prepaid: you pay first and then use. Postpaid: you use first and pay a bill at the end of the
+                        month.</p>
+                </details>
+                <details class="mp-faq">
+                    <summary>Can I change my plan later?</summary>
+                    <p>Yes. You can switch to another plan when your current validity ends.</p>
+                </details>
+                <details class="mp-faq">
+                    <summary>What happens when my daily data finishes?</summary>
+                    <p>Your internet speed goes down to a basic speed until the next day.</p>
+                </details>
+                <details class="mp-faq">
+                    <summary>Are these real prices?</summary>
+                    <p>No. This is a student portfolio demo, so all prices and offers are fictional.</p>
+                </details>
+            </div>
+        </section>
+
+        <!-- 5. Plan details popup (modal) -->
+        <div class="mp-backdrop mp-hide" id="plan-modal" role="dialog" aria-modal="true" aria-label="Plan details">
+            <div class="mp-modal">
+                <button class="mp-close" id="close-modal" aria-label="Close plan details">×</button>
+                <div id="modal-content"></div>
+            </div>
+        </div>
+
+    </main>
+
+
+
+    <!-- ===================== Footer (copied from index.html) ===================== -->
+
+    <footer class="bg-[#F0F0F0] px-6 py-10">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-10 " style="margin-left: 7%;">
+
+            <!-- SHOP.CO -->
+            <div>
+                <h1 class="text-3xl font-extrabold mb-3">WAVE LINK</h1>
+
+                <p class="text-gray-500  mb-6">
+                    As a communications provider, using personal information is fundamental to what we do
+
+                </p>
+
+                <div class="flex gap-4">
+                    <a href="https://www.instagram.com/wavelink_6?cplk=MXE0NmtkM2RsZmFhOQ=="
+                        class="bg-white w-10 h-10 rounded-lg flex items-center justify-center">
+                        <img class="w-12" src="images/instagram.png" alt="">
+                    </a>
+
+                    <a href="#" class="bg-white  w-10 h-10 rounded-lg flex items-center justify-center">
+                        <img class="w-12" src="images/github-sign.png" alt="">
+                    </a>
+
+                    <a href="https://www.facebook.com/share/1C3fV1Ym6u/"
+                        class="bg-white rounded-2xl   w-11 h-11 flex items-center justify-center">
+                        <img class="w-12" src="images/social-media.png" alt="">
+                    </a>
+
+                    <!-- <a href="#" class="bg-white border rounded-full w-12 h-12 flex items-center justify-center">
+                    <i class="fa-brands fa-github text-xl"></i>
+                </a> -->
+                </div>
+            </div>
+
+            <!-- COMPANY -->
+            <div>
+                <h2 class=" text-lg mb-8">COMPANY</h2>
+                <ul class="space-y-5 text-gray-500">
+                    <li><a href="faq.html">About Us</a></li>
+                    <li><a href="faq.html#history">History of WL</a></li>
+                    <li><a href="faq.html#history">Works</a></li>
+                    <li><a href="faq.html#career">Career</a></li>
+                </ul>
+
+                <h2 class=" text-lg mt-8 mb-8">EXPLORE</h2>
+                <ul class="space-y-5 text-gray-500">
+                    <li><a href="faq.html">Broadband</a></li>
+                    <li><a href="faq.html">TV</a></li>
+                    <li><a href="faq.html">Mobile</a></li>
+                    <li><a href="faq.html">Eplore plans</a></li>
+                </ul>
+            </div>
+
+            <!-- HELP -->
+            <div>
+                <h1 class=" text-lg mb-8">HELP</h1>
+                <ul class="space-y-5 text-gray-500">
+                    <li><a href="faq.html">Help Centre</a></li>
+                    <li><a href="faq.html">Contact Us</a></li>
+                    <li><a href="faq.html">Query section</a></li>
+                </ul>
+            </div>
+
+            <!-- FAQ -->
+            <div>
+                <h1 class="gap-10 text-lg mb-8">FAQ</h1>
+                <ul class="space-y-5 text-gray-500">
+                    <li><a href="index.html">Account</a></li>
+                    <li><a href="faq.html#qanda">Q&A</a></li>
+                    <li><a href="faq.html">Offers</a></li>
+                    <li><a href="faq.html">Collection</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- end credit -->
+
+        <footer class="text-gray-600 px-6 md:px-16 py-10">
+
+            <div class="border-t border-gray-300 pt-8">
+
+                <p class="mb-8">
+                    © 2026 Wave Link. Made to bring us closer.
+                </p>
+
+
+                <div class="flex flex-wrap gap-2 ">
+                    <a href="#" class="hover:text-white">Privacy</a>
+                    <span>·</span>
+
+                    <a href="#" class="hover:text-white">Terms</a>
+                    <span>·</span>
+
+                    <a href="#" class="hover:text-white">
+                        Accessibility
+                    </a>
+                </div>
+
+            </div>
+
+        </footer>
+    </footer>
+
+    <!-- ===================== /Footer ===================== -->
+
+
+    <!-- Header menu / scroll-shadow script (same file index.html uses) -->
+    <script src="headfoot.js"></script>
+
+    <!-- Mobile page JavaScript -->
+    <script src="js/mobile.js"></script>
+</body>
+
+</html>

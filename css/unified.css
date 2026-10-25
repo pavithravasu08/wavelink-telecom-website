@@ -1,0 +1,6 @@
+/* Consistent WaveLink navigation shared by all pages */
+.wl-unified-nav{box-sizing:border-box;position:sticky;top:0;z-index:9999;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:14px max(20px,calc((100vw - 1180px)/2));background:#0d2443;color:#fff;font-family:Arial,sans-serif;box-shadow:0 3px 12px #0002}
+.wl-unified-nav *{box-sizing:border-box}.wl-unified-nav a{color:#fff!important;text-decoration:none!important;font-size:14px;font-weight:600}.wl-unified-brand{font-size:22px!important;white-space:nowrap}.wl-unified-links{display:flex;align-items:center;gap:22px}.wl-unified-links a:hover,.wl-unified-links a[aria-current=page]{color:#3ad0e9!important}.wl-unified-toggle{display:none;border:1px solid #ffffff66;border-radius:8px;background:transparent;color:#fff;font-size:24px;padding:4px 12px;cursor:pointer}
+/* Hide duplicate legacy navigation only; preserve page layout and functional widgets */
+/* body>.site-header,body>header#header{display:none!important} */
+@media(max-width:850px){.wl-unified-nav{flex-wrap:wrap;padding:12px 18px}.wl-unified-toggle{display:block}.wl-unified-links{display:none;flex-basis:100%;flex-direction:column;align-items:stretch;gap:0}.wl-unified-links.is-open{display:flex}.wl-unified-links a{padding:12px 6px;border-top:1px solid #ffffff25}}

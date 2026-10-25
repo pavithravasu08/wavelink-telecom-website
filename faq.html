@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #0d2443;
+            --blue: #1769e0;
+            --cyan: #3ad0e9;
+            --light: #eef5ff;
+            --ink: #182b44;
+            --muted: #61728a;
+            --line: #dce6f1;
+            --white: #fff;
+            --shadow: 0 12px 32px rgba(13, 36, 67, 0.09);
+        }
+
+        html { scroll-behavior: smooth; }
+        body {
+            background: linear-gradient(180deg, var(--light), #fff 42rem);
+            color: var(--ink);
+            font-family: "Segoe UI", Arial, sans-serif;
+            line-height: 1.7;
+        }
+        body > .m-10 {
+            max-width: 1120px;
+            margin: 3rem auto;
+            padding: clamp(1.25rem, 4vw, 3.5rem);
+            overflow: hidden;
+            background: var(--white);
+            border: 1px solid var(--line);
+            border-radius: 1.25rem;
+            box-shadow: var(--shadow);
+        }
+        h2, h3 { color: var(--navy); }
+        .text-gray-900 { color: var(--navy); }
+        .text-gray-600 { color: var(--muted); }
+        body > .m-10 > p {
+            color: var(--muted);
+            line-height: 1.85;
+        }
+        body > .m-10 > h2,
+        body > .m-10 > h3 {
+            text-decoration-color: var(--cyan);
+            text-decoration-thickness: 3px;
+            text-underline-offset: 0.35rem;
+        }
+        body > .m-10 > .m-10 {
+            padding: 1.25rem 1.5rem;
+            border: 1px solid var(--line);
+            border-left: 4px solid var(--blue);
+            border-radius: 0.85rem;
+            background: #f8fbff;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        body > .m-10 > .m-10:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 22px rgba(13, 36, 67, 0.08);
+        }
+        body > .m-10 > .m-10 p:first-child {
+            color: var(--navy);
+            font-weight: 700;
+        }
+        body > .m-10 > .m-10 p:nth-child(2) { color: var(--blue); }
+        #career, #qanda { background-color: var(--light); }
+        #career > div > div:last-child > div {
+            border: 1px solid var(--line);
+            box-shadow: 0 8px 24px rgba(13, 36, 67, 0.06);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        #career > div > div:last-child > div:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow);
+        }
+        #career > div > div:last-child > div > div {
+            background: rgba(58, 208, 233, 0.16);
+            color: var(--blue);
+        }
+        #qanda details {
+            border: 1px solid var(--line);
+            box-shadow: 0 4px 14px rgba(13, 36, 67, 0.04);
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        #qanda details:hover,
+        #qanda details[open] {
+            border-color: rgba(23, 105, 224, 0.45);
+            box-shadow: 0 8px 22px rgba(13, 36, 67, 0.08);
+        }
+        #qanda summary {
+            color: var(--navy);
+            outline: none;
+        }
+        #qanda summary::marker { color: var(--blue); }
+        #qanda details p { line-height: 1.75; }
+        #qanda button {
+            background: var(--blue);
+            box-shadow: 0 6px 16px rgba(23, 105, 224, 0.2);
+        }
+        #qanda button:hover { background: var(--navy); }
+
+        @media (max-width: 640px) {
+            body > .m-10 {
+                margin: 1rem;
+                padding: 1.25rem;
+                border-radius: 1rem;
+            }
+            body > .m-10 > .m-10 { margin: 1.25rem 0; }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="m-10">
+        <h2 class="text-2xl mt-10 mb-10 underline">About Us</h2>
+        <p>For your project, I recommend making this page more brand-focused instead of simply writing "we are a team of six students." The current website presents Team Hexa as a connected family of services, so the About page should continue that idea.</p>
+
+        <h2 class="text-2xl mt-10 mb-10 underline">Who We Are</h2>
+
+        <p>
+            Connecting people to what matters
+            At Team Hexa, we believe connectivity is more than simply being online. It is about staying connected with
+            the people, entertainment, work, learning and experiences that matter most.
+
+            Our platform brings together a range of services designed for modern homes and everyday life. Whether you
+            are working from home, streaming your favourite shows, following live sports or staying in touch with family
+            and friends, Team Hexa aims to make connection simple and accessible.
+        </p>
+
+        <h3 class="font-bold mt-5 mb-5 text-2xl underline">Our Team :</h3>
+
+        <div class="m-10">
+            <p class="text-2xl">Pavithra</p>
+            <p class="italic">Full Stack Developer</p>
+            <p>Contributed to the development and implementation of the project, helping build a smooth and
+                user-friendly web experience.</p>
+        </div>
+
+        <div class="m-10">
+            <p class="text-2xl">Lalithram</p>
+            <p class="italic">Full Stack Developer</p>
+            <p>Contributed to the website development and helped bring the project's features and design ideas into a
+                working solution.</p>
+        </div>
+
+        <div class="m-10">
+            <p class="text-2xl">Martina Victor</p>
+            <p class="italic">Full Stack Developer</p>
+            <p>Contributed to the development process and helped improve the overall functionality and presentation of
+                the project.</p>
+        </div>
+
+        <div class="m-10">
+            <p class="text-2xl">Jayapriya</p>
+            <p class="italic">Full Stack Developer</p>
+            <p>Contributed to building and refining different parts of the website, focusing on creating a clean and
+                effective user experience.</p>
+        </div>
+
+        <div class="m-10">
+            <p class="text-2xl">Saravanan</p>
+            <p class="italic">Full Stack Developer</p>
+            <p>Contributed to the development and testing of the project, helping ensure that the website works
+                effectively.</p>
+        </div>
+
+        <div class="m-10">
+            <p class="text-2xl">Mohendra Srinivasan</p>
+            <p class="italic">Full Stack Developer</p>
+            <p>Contributed to the development, design, and integration of different components of the project.</p>
+        </div>
+
+
+        <h2 class="text-3xl font-bold mb-4" id="history">Our Journey</h2>
+
+        <p>
+            Wave Link (WL) was created with a simple idea of bringing
+            creativity, technology, and teamwork together to build
+            meaningful digital experiences. Our journey began when six
+            passionate Full Stack Developers came together with a common
+            goal of learning, creating, and developing a complete web
+            project. Each member contributed their own ideas, skills,
+            and efforts throughout the development process. From planning
+            the structure and designing the interface to developing,
+            testing, and improving the website, our team worked together
+            to turn our ideas into reality. The journey of Wave Link is
+            not only about creating a website, but also about learning
+            through collaboration, solving problems together, and
+            continuously improving our technical skills. With teamwork,
+            dedication, and a shared vision, WL continues to grow as a
+            team of Full Stack Developers who believe that great ideas
+            become better when they are built together.
+        </p>
+
+
+        <!-- Why Team wave link Section -->
+        <section id="career" class="bg-gray-50 py-16 px-6">
+
+            <div class="max-w-6xl mx-auto">
+
+                <!-- Heading -->
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">
+                        Why WAVE LINK ?
+                    </h2>
+
+                    <p class="text-lg md:text-xl text-gray-600 mt-3">
+                        One place. Many ways to connect.
+                    </p>
+                </div>
+
+                <!-- Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                    <!-- Simple -->
+                    <div class="bg-white p-7 rounded-xl shadow-sm hover:shadow-md transition duration-300">
+                        <div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-full mb-5">
+                            <span class="text-2xl">✓</span>
+                        </div>
+
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">
+                            Simple
+                        </h3>
+
+                        <p class="text-gray-600 leading-7">
+                            We keep our services easy to explore and understand.
+                        </p>
+                    </div>
+
+
+                    <!-- Connected -->
+                    <div class="bg-white p-7 rounded-xl shadow-sm hover:shadow-md transition duration-300">
+                        <div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-full mb-5">
+                            <span class="text-2xl">🔗</span>
+                        </div>
+
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">
+                            Connected
+                        </h3>
+
+                        <p class="text-gray-600 leading-7">
+                            Our services are designed around the different ways
+                            people communicate, work and enjoy entertainment.
+                        </p>
+                    </div>
+
+
+                    <!-- Reliable -->
+                    <div class="bg-white p-7 rounded-xl shadow-sm hover:shadow-md transition duration-300">
+                        <div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-full mb-5">
+                            <span class="text-2xl">🛡️</span>
+                        </div>
+
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">
+                            Reliable
+                        </h3>
+
+                        <p class="text-gray-600 leading-7">
+                            We focus on providing dependable solutions for
+                            everyday connectivity.
+                        </p>
+                    </div>
+
+
+                    <!-- Flexible -->
+                    <div class="bg-white p-7 rounded-xl shadow-sm hover:shadow-md transition duration-300">
+                        <div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-full mb-5">
+                            <span class="text-2xl">⚡</span>
+                        </div>
+
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">
+                            Flexible
+                        </h3>
+
+                        <p class="text-gray-600 leading-7">
+                            Different services and plans can support different
+                            customer requirements.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- FAQ Section -->
+        <!-- FAQ Section -->
+        <section id="qanda" class="bg-gray-50 py-16 px-6">
+
+            <div class="max-w-5xl mx-auto">
+
+                <!-- Heading -->
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">
+                        Frequently Asked Questions
+                    </h2>
+
+                    <p class="text-gray-600 mt-3">
+                        Find quick answers about <b>WAVE LINK</b> services.
+                    </p>
+                </div>
+
+                <div class="space-y-4">
+
+                    <!-- Broadband FAQs -->
+
+
+
+                    <details class="bg-white rounded-lg shadow-sm p-5 cursor-pointer">
+                        <summary class="font-semibold text-lg text-gray-900">
+                            Is broadband suitable for home use?
+                        </summary>
+                        <p class="text-gray-600 mt-3">
+                            Yes. Broadband is suitable for browsing, online classes,
+                            video calls, streaming and connecting multiple devices.
+                        </p>
+                    </details>
+
+                    <details class="bg-white rounded-lg shadow-sm p-5 cursor-pointer">
+                        <summary class="font-semibold text-lg text-gray-900">
+                            Can I use broadband for online gaming?
+                        </summary>
+                        <p class="text-gray-600 mt-3">
+                            Yes. A suitable broadband connection can support online
+                            gaming and other high-speed activities.
+                        </p>
+                    </details>
+
+                    <details class="bg-white rounded-lg shadow-sm p-5 cursor-pointer">
+                        <summary class="font-semibold text-lg text-gray-900">
+                            Can multiple devices connect to broadband?
+                        </summary>
+                        <p class="text-gray-600 mt-3">
+                            Yes. Multiple devices such as phones, laptops, tablets
+                            and smart TVs can connect to a broadband network.
+                        </p>
+                    </details>
+
+                    <details class="bg-white rounded-lg shadow-sm p-5 cursor-pointer">
+                        <summary class="font-semibold text-lg text-gray-900">
+                            What should I do if my broadband is not working?
+                        </summary>
+                        <p class="text-gray-600 mt-3">
+                            Check your router and connections first. If the issue
+                            continues, contact the support team for assistance.
+                        </p>
+                    </details>
+
+
+                    <!-- TV FAQs -->
+
+        
+
+                    <details class="bg-white rounded-lg shadow-sm p-5 cursor-pointer">
+                        <summary class="font-semibold text-lg text-gray-900">
+                            Can I use TV and broadband together?
+                        </summary>
+                        <p class="text-gray-600 mt-3">
+                            Yes. TV and broadband services can complement each other
+                            for a connected home entertainment experience.
+                        </p>
+                    </details>
+
+                    <details class="bg-white rounded-lg shadow-sm p-5 cursor-pointer">
+                        <summary class="font-semibold text-lg text-gray-900">
+                            Can I watch TV on different devices?
+                        </summary>
+                        <p class="text-gray-600 mt-3">
+                            Depending on the available service and plan, TV content
+                            may be accessible on compatible devices.
+                        </p>
+                    </details>
+
+
+                    <!-- Mobile FAQs -->
+                    <details class="bg-white rounded-lg shadow-sm p-5 cursor-pointer">
+                        <summary class="font-semibold text-lg text-gray-900">
+                            How can I choose a mobile plan?
+                        </summary>
+                        <p class="text-gray-600 mt-3">
+                            You can choose a plan based on your calling, messaging
+                            and mobile data requirements.
+                        </p>
+                    </details>
+
+                    <details class="bg-white rounded-lg shadow-sm p-5 cursor-pointer">
+                        <summary class="font-semibold text-lg text-gray-900">
+                            Can I use mobile data for internet access?
+                        </summary>
+                        <p class="text-gray-600 mt-3">
+                            Yes. Mobile data allows you to access the internet on
+                            compatible smartphones and devices.
+                        </p>
+                    </details>
+
+                    <details class="bg-white rounded-lg shadow-sm p-5 cursor-pointer">
+                        <summary class="font-semibold text-lg text-gray-900">
+                            Can I use my mobile service while travelling?
+                        </summary>
+                        <p class="text-gray-600 mt-3">
+                            Mobile service while travelling depends on network
+                            availability and the features included in your plan.
+                        </p>
+                    </details>
+
+
+                    <!-- Network FAQs -->
+
+                    <details class="bg-white rounded-lg shadow-sm p-5 cursor-pointer">
+                        <summary class="font-semibold text-lg text-gray-900">
+                            What is a network?
+                        </summary>
+                        <p class="text-gray-600 mt-3">
+                            A network connects devices and allows them to communicate
+                            and share internet or other digital services.
+                        </p>
+                    </details>
+
+                    <details class="bg-white rounded-lg shadow-sm p-5 cursor-pointer">
+                        <summary class="font-semibold text-lg text-gray-900">
+                            Why is a reliable network important?
+                        </summary>
+                        <p class="text-gray-600 mt-3">
+                            A reliable network helps provide smooth internet access,
+                            communication and better performance for connected devices.
+                        </p>
+                    </details>
+
+                    <details class="bg-white rounded-lg shadow-sm p-5 cursor-pointer">
+                        <summary class="font-semibold text-lg text-gray-900">
+                            What can affect network performance?
+                        </summary>
+                        <p class="text-gray-600 mt-3">
+                            Network performance can be affected by connection quality,
+                            network traffic, device issues and coverage.
+                        </p>
+                    </details>
+
+                    <details class="bg-white rounded-lg shadow-sm p-5 cursor-pointer">
+                        <summary class="font-semibold text-lg text-gray-900">
+                            How can I improve my network connection?
+                        </summary>
+                        <p class="text-gray-600 mt-3">
+                            Check your device and router connections, keep your
+                            equipment properly positioned and contact support if
+                            problems continue.
+                        </p>
+                    </details>
+
+                    <details class="bg-white rounded-lg shadow-sm p-5 cursor-pointer">
+                        <summary class="font-semibold text-lg text-gray-900">
+                            What should I do if my network is slow?
+                        </summary>
+                        <p class="text-gray-600 mt-3">
+                            Check your connection and restart your network equipment.
+                            If the problem continues, contact the support team.
+                        </p>
+                    </details>
+
+                </div>
+
+                <!-- Bottom -->
+                <div class="text-center mt-12">
+                    <h3 class="text-2xl font-bold text-gray-900">
+                        Still have questions?
+                    </h3>
+
+                    <p class="text-gray-600 mt-2">
+                        Our team is here to help you.
+                    </p>
+
+                    <a href="contact.html#contactSection">
+                        <button id="ct" class="mt-5 bg-blue-600 text-white px-6 py-3 rounded-lg
+                           hover:bg-blue-700 transition duration-300">
+                        Contact Us
+                    </button>
+                    </a>
+                </div>
+
+            </div>
+
+        </section>
+    </div>
+
+</html>

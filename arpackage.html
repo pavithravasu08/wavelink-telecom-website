@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Package</title>
+<link href="package.css" rel="stylesheet"/>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="headfoot.css" rel="stylesheet"/>
+</head>
+<body>
+<header class="sticky top-0 z-50 bg-white" id="header">
+<div class="max-w-6xl mx-auto px-4 h-20 flex items-center justify-between">
+
+<a aria-label="WaveLink home" class="text-2xl font-extrabold tracking-tight" href="afterreg.html"><img alt="WaveLink logo" src="images/wavelink-logo.png" style="height:48px;width:auto;max-width:170px;object-fit:contain"/></a>
+<nav class="hidden lg:flex items-center gap-8 font-bold text-sm">
+<a class="hover:text-[#5b2bd9]" href="afterreg.html">Home</a>
+<a class="hover:text-[#5b2bd9]" href="arbroadband.html">Broadband</a>
+<a class="hover:text-[#5b2bd9]" href="armobile.html">Mobile Plans</a>
+<a class="hover:text-[#5b2bd9]" href="arcontact.html">Support</a>
+<a class="hover:text-[#5b2bd9]" href="arpackage.html">Wave Connect</a>
+</nav>
+
+<div class="flex items-center gap-3">
+<a class="hidden sm:block border border-gray-300 rounded-full px-5 py-2 font-bold text-sm hover:border-[#17123a]" href="faq.html#ct">Help</a>
+
+<img alt="" class="cursor-pointer" src="images/user.png" width="36px"/>
+<button aria-controls="mobileMenu" aria-expanded="false" aria-label="Toggle navigation" class="lg:hidden border border-gray-300 rounded-full w-10 h-10 text-xl" id="menuBtn" type="button">
+                    ☰
+                </button>
+</div>
+</div>
+
+<div class="hidden lg:hidden border-t border-gray-200 px-4 pb-4" id="mobileMenu">
+<a class="mobile-link block py-3 font-bold" href="afterreg.html">Home</a>
+<a class="mobile-link block py-3 font-bold" href="arbroadband.html">Broadband</a>
+<a class="mobile-link block py-3 font-bold" href="armobile.html">Mobile Plans</a>
+<a class="mobile-link block py-3 font-bold" href="arcontact.html">Support</a>
+<a class="mobile-link block py-3 font-bold" href="arpackage.html">Wave Connect</a>
+</div>
+</header>
+
+<section class="section" style="background: #eef5ff;">
+<div class="container split">
+<div>
+<span class="eyebrow">Bundle Builder</span>
+<h2>Build your perfect package</h2>
+<p class="muted">
+                    Choose broadband, mobile and optional TV
+                    to see your estimated monthly total instantly.
+                </p>
+
+<div class="calculator">
+<div class="calculator-fields">
+
+<div class="field">
+<label for="calc-broadband">
+                                Broadband
+                            </label>
+<select id="calc-broadband">
+<option value="0">Fibre 0 — ₹0</option>
+<option value="124">Fibre 50 — ₹124</option>
+<option value="229">Fibre 100 — ₹229</option>
+<option value="336">Fibre 300 — ₹336</option>
+<option value="443">Fibre 500 — ₹443</option>
+<option value="724">GigaWave 900 — ₹724 </option>
+</select>
+</div>
+
+<div class="field">
+<label for="calc-mobile">
+                                Mobile
+                            </label>
+<select id="calc-mobile">
+<option value="0">No mobile — ₹0</option>
+<option value="249">Starter — ₹249</option>
+<option value="415">Everyday — ₹415</option>
+<option value="422">Plus — ₹422</option>
+<option value="430">Max — ₹430</option>
+</select>
+</div>
+
+<div class="field">
+
+<label class="check-row">
+<input id="calc-tv" type="checkbox"/>
+                                Add TV + ₹2999
+                            </label>
+</div>
+</div>
+
+<div class="streaming-services">
+<h3>Choose Your OTT Services</h3>
+<div class="ott-list">
+<label class="ott-item">
+<input name="ott" type="checkbox" value="999"/>
+<img alt="Amazon Prime" src="images/amazon.png"/>
+<span>Amazon Prime ₹999</span>
+</label>
+<label class="ott-item">
+<input name="ott" type="checkbox" value="999"/>
+<img alt="Disney" src="images/Disney.png"/>
+<span>Disney+ Hotstar ₹999</span>
+</label>
+<label class="ott-item">
+<input name="ott" type="checkbox" value="999"/>
+<img alt="Sony LIV" src="images/sony liv.webp" style="width: 20%;"/>
+<span>Sony LIV ₹999</span>
+</label>
+<label class="ott-item">
+<input name="ott" type="checkbox" value="999"/>
+<img alt="Netflix" src="images/netflix.png"/>
+<span>Netflix ₹999</span>
+</label>
+<label class="ott-item">
+<input name="ott" type="checkbox" value="999"/>
+<img alt="zee5" src="images/zee5.png" style="width: 20%;"/>
+<span>ZEE5 ₹999</span>
+</label>
+<label class="ott-item">
+<input name="ott" type="checkbox" value="999"/>
+<img alt="sun nxt" src="images/sun nxt.webp" style="width: 20%;"/>
+<span>Sun NXT ₹999</span>
+</label>
+</div>
+</div>
+
+<p aria-live="polite" class="total" id="calc-total">₹0 / month</p>
+
+<p class="muted" id="calc-breakdown"></p>
+<p class="subtle">
+                        Illustrative monthly estimates;
+                        no checkout is available.
+                    </p>
+</div>
+</div>
+
+<div class="banner" id="availability">
+<span class="eyebrow" style="color: #a9f4ff;">
+                    Availability Checker
+                </span>
+<h2>Check your area</h2>
+<p>
+                    Try our sample postcode checker.
+                    This is a classroom demonstration,
+                    not a real network coverage lookup.
+                </p>
+
+<form class="availability" id="postcode-form">
+<input aria-label="IND postcode" id="postcode" placeholder="e.g. 638301" required="" type="text"/>
+<button class="btn btn-light" type="submit">
+                        Check demo
+                    </button>
+</form>
+
+<p aria-live="polite" id="postcode-result" style="margin-top: 15px;">
+</p>
+<div class="notice" style="color: #6e4d00;">
+                    Demo only: results are based on a short
+                    fictional list of postcode prefixes.
+                </div>
+
+<div class="map-box">
+<h3>Find Your Location</h3>
+<iframe allowfullscreen="" loading="lazy" src="https://maps.google.com/maps?q=Bhavani%2C%20Tamil%20Nadu&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=&amp;output=embed" title="Google Map - Bhavani">
+</iframe>
+</div>
+</div>
+</div></section>
+
+<footer class="bg-[#F0F0F0] px-6 py-10">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-10" style="margin-left: 7%;">
+
+<div>
+<a aria-label="WaveLink home" href="afterreg.html"><img alt="WaveLink logo" src="images/wavelink-logo.png" style="height:55px;width:auto;max-width:190px;object-fit:contain"/></a>
+<p class="text-gray-500 mb-6">
+                    As a communications provider, using personal information is fundamental to what we do
+
+                </p>
+<div class="flex gap-4">
+<a class="bg-white w-10 h-10 rounded-lg flex items-center justify-center" href="https://www.instagram.com/wavelink_6?cplk=MXE0NmtkM2RsZmFhOQ==">
+<img alt="" class="w-12" src="images/instagram.png"/>
+</a>
+<a class="bg-white w-10 h-10 rounded-lg flex items-center justify-center" href="#">
+<img alt="" class="w-12" src="images/github-sign.png"/>
+</a>
+<a class="bg-white rounded-2xl w-11 h-11 flex items-center justify-center" href="https://www.facebook.com/share/1C3fV1Ym6u/">
+<img alt="" class="w-12" src="images/social-media.png"/>
+</a>
+
+</div>
+</div>
+
+<div>
+<h2 class="text-lg mb-8">COMPANY</h2>
+<ul class="space-y-5 text-gray-500">
+<li><a href="faq.html">About Us</a></li>
+<li><a href="faq.html#history">History of WL</a></li>
+<li><a href="faq.html#history">Works</a></li>
+<li><a href="faq.html#career">Career</a></li>
+</ul>
+<h2 class="text-lg mt-8 mb-8">EXPLORE</h2>
+<ul class="space-y-5 text-gray-500">
+<li><a href="arbroadband.html">Broadband</a></li>
+<li><a href="faq.html">TV</a></li>
+<li><a href="armobile.html">Mobile</a></li>
+<li><a href="faq.html">Explore plans</a></li>
+</ul>
+</div>
+
+<div>
+<h1 class="text-lg mb-8">HELP</h1>
+<ul class="space-y-5 text-gray-500">
+<li><a href="faq.html">Help Centre</a></li>
+<li><a href="arcontact.html">Contact Us</a></li>
+<li><a href="faq.html">Query section</a></li>
+</ul>
+</div>
+
+<div>
+<h1 class="gap-10 text-lg mb-8">FAQ</h1>
+<ul class="space-y-5 text-gray-500">
+<li><a href="index.html">Account</a></li>
+<li><a href="faq.html#qanda">Q&amp;A</a></li>
+<li><a href="faq.html">Offers</a></li>
+<li><a href="faq.html">Collection</a></li>
+</ul>
+</div>
+</div>
+
+<div class="text-gray-600 px-6 md:px-16 py-10">
+<div class="border-t border-gray-300 pt-8">
+<p class="mb-8">
+                    © 2026 WaveLink. Made to bring us closer.
+                </p>
+<div class="flex flex-wrap gap-2">
+<a class="hover:text-white" href="#">Privacy</a>
+<span>·</span>
+<a class="hover:text-white" href="#">Terms</a>
+<span>·</span>
+<a class="hover:text-white" href="#">
+                        Accessibility
+                    </a>
+</div>
+</div>
+</div>
+</footer>
+
+<script defer="" src="package.js"></script><script src="headfoot.js"></script></body>
+
+</html>

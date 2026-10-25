@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Package</title>
+    <link href="package.css" rel="stylesheet">
+    <link href="package.js">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="headfoot.css">
+</head>
+
+<body>
+
+    <header id="header" class="sticky top-0 z-50 bg-white">
+
+        <div class="max-w-6xl mx-auto px-4 h-20 flex items-center justify-between">
+
+            <!-- Logo -->
+            <a href="#" class="text-2xl font-extrabold tracking-tight">
+                WAVE<span class="text-[#5926db]"> LINK</span><span class="text-[#ff8a6b]">.</span>
+                <!-- <h1 class=" text-3xl font-extrabold mb-3">WAVE LINK</h1> -->
+
+            </a>
+
+
+            <nav class="hidden lg:flex items-center gap-8 font-bold text-sm">
+                <a href="index.html" class="hover:text-[#5b2bd9]">Home</a>
+                <a href="broadband.html " class="hover:text-[#5b2bd9]">Broadband</a>
+                <a href="mobile.html" class="hover:text-[#5b2bd9]">Mobile Plans</a>
+                <a href="contact.html" class="hover:text-[#5b2bd9]">Support</a>
+                <a href="package.html" class="hover:text-[#5b2bd9]">Wave Connect</a>
+            </nav>
+
+            <!-- Buttons -->
+            <div class="flex items-center gap-3">
+                <a href="faq.html#ct"><button
+                    class="hidden sm:block border border-gray-300 rounded-full px-5 py-2 font-bold text-sm hover:border-[#17123a]">
+                    Help
+                </button></a>
+                <a href="register.html"><button id="login"
+                        class="bg-[#5b2bd9] text-white rounded-full px-5 py-2 font-bold text-sm hover:bg-[#4a20b8]">
+                        Log in
+                    </button></a>
+
+                <button id="menuBtn" class="lg:hidden border border-gray-300 rounded-full w-10 h-10 text-xl">
+                    ☰
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile menu (hidden at the start) -->
+        <div id="mobileMenu" class="hidden lg:hidden border-t border-gray-200 px-4 pb-4">
+            <a href="index.html" class="mobile-link block py-3 font-bold">Home</a>
+            <a href="broadband.html" class="mobile-link block py-3 font-bold">Broadband</a>
+            <a href="mobile.html" class="mobile-link block py-3 font-bold">Mobile Plans</a>
+            <a href="contact.html" class="mobile-link block py-3 font-bold">Support</a>
+            <a href="package.html" class="mobile-link block py-3 font-bold">Wave Connect</a>
+
+        </div>
+
+    </header>
+
+
+    <!-- Package Calculator Section -->
+    <section class="section" style="background: #eef5ff;">
+
+        <div class="container split">
+
+            <div>
+
+                <span class="eyebrow">Bundle Builder</span>
+
+                <h2>Build your perfect package</h2>
+
+                <p class="muted">
+                    Choose broadband, mobile and optional TV
+                    to see your estimated monthly total instantly.
+                </p>
+
+                <!-- Calculator -->
+                <div class="calculator">
+
+                    <div class="calculator-fields">
+
+                        <!-- Broadband Selection -->
+                        <div class="field">
+
+                            <label for="calc-broadband">
+                                Broadband
+                            </label>
+
+                            <select id="calc-broadband">
+                                <option value="0">Fibre 0 — ₹0</option>
+                                <option value="124">Fibre 50 — ₹124</option>
+                                <option value="229">Fibre 100 — ₹229</option>
+                                <option value="336">Fibre 300 — ₹336</option>
+                                <option value="443">Fibre 500 — ₹443</option>
+                                <option value="724">GigaWave 900 — ₹724 </option>
+                            </select>
+
+                        </div>
+
+                        <!-- Mobile Selection -->
+                        <div class="field">
+
+                            <label for="calc-mobile">
+                                Mobile
+                            </label>
+
+                            <select id="calc-mobile">
+                                <option value="0">No mobile — ₹0</option>
+                                <option value="249">Starter — ₹249</option>
+                                <option value="415">Everyday — ₹415</option>
+                                <option value="422">Plus — ₹422</option>
+                                <option value="430">Max — ₹430</option>
+                            </select>
+
+                        </div>
+                        <!--optional TV-->
+                        <div class="field">
+                            <label for="calc-tv">
+
+                            </label>
+                            <lable class="check-row">
+                                <input type="checkbox" id="calc-tv">
+                                Add TV + ₹2999
+                            </lable>
+                        </div>
+                    </div>
+                    <!-- Streaming Services Checkbox List -->
+                    <div class="streaming-services">
+                        <h3>Choose Your OTT Services</h3>
+
+                        <div class="ott-list">
+                            <label class="ott-item">
+                                <input type="checkbox" name="ott" value="999">
+                                <img src="images/amazon.png" alt="Amozon Prime">
+                                <span>Amazon Prime ₹999</span>
+                            </label>
+
+                            <label class="ott-item">
+                                <input type="checkbox" name="ott" value="999">
+                                <img src="images/Disney.png" alt="Disney">
+                                <span>Disney+Hotstor ₹999</span>
+                            </label>
+
+                            <label class="ott-item">
+                                <input type="checkbox" name="ott" value="999">
+                                <img src="images/sony liv.webp" alt="sun nxt" style="width: 20%;">
+                                <span>Sony LIV ₹999</span>
+                            </label>
+
+                            <label class="ott-item">
+                                <input type="checkbox" name="ott" value="999">
+                                <img src="images/netflix.png" alt="Netflix">
+                                <span>Netflix ₹999</span>
+                            </label>
+
+                            <label class="ott-item">
+                                <input type="checkbox" name="ott" value="999">
+                                <img src="images/zee5.png" alt="zee5" style="width: 20%;">
+                                <span>ZEE5 ₹999</span>
+                            </label>
+
+                            <label class="ott-item">
+                                <input type="checkbox" name="ott" value="999">
+                                <img src="images/sun nxt.webp" alt="sun nxt" style="width: 20%;">
+                                <span>Sun NXT ₹999</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Monthly Total -->
+                    <p class="total" id="calc-total" aria-live="polite">
+                        ₹2499 / month
+                    </p>
+
+                    <!-- Price Breakdown -->
+                    <p id="calc-breakdown" class="muted"></p>
+
+                    <p class="subtle">
+                        Illustrative monthly estimates;
+                        no checkout is available.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- Availability Checker -->
+            <div class="banner" id="availability">
+
+                <span class="eyebrow" style="color: #a9f4ff;">
+                    Availability Checker
+                </span>
+
+                <h2>Check your area</h2>
+
+                <p>
+                    Try our sample postcode checker.
+                    This is a classroom demonstration,
+                    not a real network coverage lookup.
+                </p>
+
+                <!-- Postcode Form -->
+                <form class="availability" id="postcode-form">
+
+                    <input type="text" id="postcode" placeholder="e.g. 638301" aria-label="IND postcode" required>
+
+                    <button type="submit" class="btn btn-light">
+                        Check demo
+                    </button>
+
+                </form>
+
+                <!-- Availability Result -->
+                <p id="postcode-result" aria-live="polite" style="margin-top: 15px;">
+                </p>
+
+                <div class="notice" style="color: #6e4d00;">
+                    Demo only: results are based on a short
+                    fictional list of postcode prefixes.
+                </div>
+                <!-- Google Map Section -->
+                <div class="map-box">
+                    <h3>Find Your Location</h3>
+
+                    <iframe
+                        src="https://maps.google.com/maps?q=Bhavani%2C%20Tamil%20Nadu&t=&z=12&ie=UTF8&iwloc=&output=embed"
+                        title="Google Map - Bhavani" loading="lazy" allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+    </section>
+
+    <!-- footer -->
+
+    <footer class="bg-[#F0F0F0] px-6 py-10">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-10 " style="margin-left: 7%;">
+
+            <!-- SHOP.CO -->
+            <div>
+                <h1 class="text-3xl font-extrabold mb-3">WAVE LINK</h1>
+
+                <p class="text-gray-500  mb-6">
+                    As a communications provider, using personal information is fundamental to what we do
+
+                </p>
+
+                <div class="flex gap-4">
+                    <a href="https://www.instagram.com/wavelink_6?cplk=MXE0NmtkM2RsZmFhOQ=="
+                        class="bg-white w-10 h-10 rounded-lg flex items-center justify-center">
+                        <img class="w-12" src="images/instagram.png" alt="">
+                    </a>
+
+                    <a href="#" class="bg-white  w-10 h-10 rounded-lg flex items-center justify-center">
+                        <img class="w-12" src="images/github-sign.png" alt="">
+                    </a>
+
+                    <a href="https://www.facebook.com/share/1C3fV1Ym6u/"
+                        class="bg-white rounded-2xl   w-11 h-11 flex items-center justify-center">
+                        <img class="w-12" src="images/social-media.png" alt="">
+                    </a>
+
+                    <!-- <a href="#" class="bg-white border rounded-full w-12 h-12 flex items-center justify-center">
+                    <i class="fa-brands fa-github text-xl"></i>
+                </a> -->
+                </div>
+            </div>
+
+            <!-- COMPANY -->
+            <div>
+                <h2 class=" text-lg mb-8">COMPANY</h2>
+                <ul class="space-y-5 text-gray-500">
+                    <li><a href="faq.html">About Us</a></li>
+                    <li><a href="faq.html#history">History of WL</a></li>
+                    <li><a href="faq.html#history">Works</a></li>
+                    <li><a href="faq.html#career">Career</a></li>
+                </ul>
+
+                <h2 class=" text-lg mt-8 mb-8">EXPLORE</h2>
+                <ul class="space-y-5 text-gray-500">
+                    <li><a href="faq.html">Broadband</a></li>
+                    <li><a href="faq.html">TV</a></li>
+                    <li><a href="faq.html">Mobile</a></li>
+                    <li><a href="faq.html">Eplore plans</a></li>
+                </ul>
+            </div>
+
+            <!-- HELP -->
+            <div>
+                <h1 class=" text-lg mb-8">HELP</h1>
+                <ul class="space-y-5 text-gray-500">
+                    <li><a href="faq.html">Help Centre</a></li>
+                    <li><a href="faq.html">Contact Us</a></li>
+                    <li><a href="faq.html">Query section</a></li>
+                </ul>
+            </div>
+
+            <!-- FAQ -->
+            <div>
+                <h1 class="gap-10 text-lg mb-8">FAQ</h1>
+                <ul class="space-y-5 text-gray-500">
+                    <li><a href="index.html">Account</a></li>
+                    <li><a href="faq.html#qanda">Q&A</a></li>
+                    <li><a href="faq.html">Offers</a></li>
+                    <li><a href="faq.html">Collection</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- end credit -->
+
+        <footer class="text-gray-600 px-6 md:px-16 py-10">
+
+            <div class="border-t border-gray-300 pt-8">
+
+                <p class="mb-8">
+                    © 2026 Team Hexa. Made to bring us closer.
+                </p>
+
+
+                <div class="flex flex-wrap gap-2 ">
+                    <a href="#" class="hover:text-white">Privacy</a>
+                    <span>·</span>
+
+                    <a href="#" class="hover:text-white">Terms</a>
+                    <span>·</span>
+
+                    <a href="#" class="hover:text-white">
+                        Accessibility
+                    </a>
+                </div>
+
+            </div>
+
+        </footer>
+    </footer>
+
+    <!-- footer -->
+</body>
+<script src="package.js" defer></script>
+<script src="headfoot.js"></script>
+
+</html>

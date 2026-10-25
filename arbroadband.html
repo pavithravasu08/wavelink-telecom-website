@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>WaveLink BroadBand</title>
+
+<link href="broadband.css" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+
+<script>
+        tailwind.config = {
+            corePlugins: {preflight: false, container: false},
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            navy: '#0d2443', blue: '#1769e0', dark: '#0752b7',
+                            cyan: '#3ad0e9', soft: '#eef5ff', ink: '#182b44',
+                            muted: '#61728a', line: '#dce6f1'
+                        }
+                    },
+                    fontFamily: {
+                        display: ['Outfit', 'Arial', 'sans-serif'],
+                        body: ['DM Sans', 'Arial', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        :root {
+            --navy: #0d2443;
+            --blue: #1769e0;
+            --cyan: #3ad0e9;
+            --light: #eef5ff;
+            --ink: #182b44;
+            --muted: #61728a;
+            --line: #dce6f1;
+            --white: #fff;
+            --shadow: 0 12px 32px rgba(13, 36, 67, 0.09);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body.bg-white {
+            min-height: 100vh;
+            background: var(--light);
+            color: var(--ink);
+            font-family: "Segoe UI", Arial, sans-serif;
+        }
+
+        .text-\[\#17123a\] {
+            color: var(--navy);
+        }
+
+        .text-\[\#5926db\] {
+            color: var(--blue);
+        }
+
+        .text-\[\#ff8a6b\] {
+            color: var(--cyan);
+        }
+
+        .bg-\[\#5b2bd9\] {
+            background-color: var(--blue);
+        }
+
+        .bg-\[\#F0F0F0\] {
+            background-color: var(--light);
+        }
+
+        .h-\[150vh\] {
+            height: 150vh;
+            background: radial-gradient(ellipse at 50% 35%, rgba(58, 208, 233, 0.12), transparent 55%);
+        }
+
+        .hover\:text-\[\#5b2bd9\]:hover {
+            color: var(--blue);
+        }
+
+        .hover\:bg-\[\#4a20b8\]:hover {
+            background-color: var(--navy);
+        }
+
+        .hover\:border-\[\#17123a\]:hover {
+            border-color: var(--blue);
+        }
+
+        header {
+            border-bottom: 1px solid var(--line);
+            transition: box-shadow 0.25s ease;
+            color: var(--navy);
+            font-family: "Segoe UI", Arial, sans-serif;
+        }
+
+        header a,
+        footer a {
+            transition: color 0.2s ease, background-color 0.2s ease;
+        }
+
+        header nav a:hover,
+        footer a:hover {
+            color: var(--blue);
+        }
+
+        header button {
+            border-color: var(--line);
+            color: var(--navy);
+            transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+        }
+
+        header button:hover {
+            border-color: var(--blue);
+        }
+
+        #login {
+            border: 0;
+            box-shadow: 0 6px 16px rgba(23, 105, 224, 0.22);
+        }
+
+        #login:hover {
+            background-color: var(--navy);
+        }
+
+        #mobileMenu {
+            border-color: var(--line);
+        }
+
+        body>footer {
+            border-top: 1px solid var(--line);
+            color: var(--ink);
+            font-family: "Segoe UI", Arial, sans-serif;
+        }
+
+        footer h1,
+        footer h2 {
+            color: var(--navy);
+            font-family: "Segoe UI", Arial, sans-serif;
+        }
+
+        footer .text-gray-500 {
+            color: var(--muted);
+        }
+
+        footer ul a {
+            color: var(--muted);
+        }
+
+        footer ul a:hover {
+            color: var(--blue);
+        }
+
+        footer .flex.gap-4 a {
+            border: 1px solid var(--line);
+            box-shadow: 0 4px 12px rgba(13, 36, 67, 0.06);
+        }
+
+        footer>footer {
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        footer>footer .text-gray-600 {
+            color: rgba(255, 255, 255, 0.78);
+        }
+
+        footer>footer .border-gray-300 {
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        footer>footer a {
+            color: var(--white);
+        }
+
+        footer>footer a:hover {
+            color: var(--cyan);
+        }
+    </style>
+</head>
+<body>
+<header class="sticky top-0 z-50 bg-white" id="header">
+<div class="max-w-6xl mx-auto px-4 h-20 flex items-center justify-between">
+
+<a aria-label="WaveLink home" class="text-2xl font-extrabold tracking-tight" href="afterreg.html"><img alt="WaveLink logo" src="images/wavelink-logo.png" style="height:48px;width:auto;max-width:170px;object-fit:contain"/></a>
+<nav class="hidden lg:flex items-center gap-8 font-bold text-sm">
+<a class="hover:text-[#5b2bd9]" href="afterreg.html">Home</a>
+<a class="hover:text-[#5b2bd9]" href="arbroadband.html">Broadband</a>
+<a class="hover:text-[#5b2bd9]" href="armobile.html">Mobile Plans</a>
+<a class="hover:text-[#5b2bd9]" href="arcontact.html">Support</a>
+<a class="hover:text-[#5b2bd9]" href="arpackage.html">Wave Connect</a>
+</nav>
+
+<div class="flex items-center gap-3">
+<button class="hidden sm:block border border-gray-300 rounded-full px-5 py-2 font-bold text-sm hover:border-[#17123a]">
+                    Help
+                </button>
+
+<img alt="" class="cursor-pointer" src="images/user.png" width="36px"/>
+<button aria-controls="mobileMenu" aria-expanded="false" aria-label="Toggle navigation" class="lg:hidden border border-gray-300 rounded-full w-10 h-10 text-xl" id="menuBtn" type="button">
+                    ☰
+                </button>
+</div>
+</div>
+
+<div class="hidden lg:hidden border-t border-gray-200 px-4 pb-4" id="mobileMenu">
+<a class="mobile-link block py-3 font-bold" href="afterreg.html">Home</a>
+<a class="mobile-link block py-3 font-bold" href="arbroadband.html">Broadband</a>
+<a class="mobile-link block py-3 font-bold" href="armobile.html">Mobile Plans</a>
+<a class="mobile-link block py-3 font-bold" href="arcontact.html">Support</a>
+<a class="mobile-link block py-3 font-bold" href="arpackage.html">Wave Connect</a>
+</div>
+</header>
+<main>
+
+<section class="page-hero">
+<div class="container">
+<span class="eyebrow" style="color: #80e9ff;">
+                    Fibre broadband
+                </span>
+<h1>Fibre plans for every home</h1>
+<p>
+                    Unlimited fibre from 50 Mbps to 1 Gbps, with free installation.
+                    Pick the speed that fits your home.
+                </p>
+</div>
+</section>
+
+<section class="py-16">
+<div class="mx-auto grid w-[90%] max-w-[1150px] gap-10 lg:grid-cols-[1.1fr_.9fr] lg:items-stretch">
+<div class="flex flex-col justify-center">
+<span class="inline-block self-start rounded-full bg-[#e6f3ff] px-3 py-1 text-xs font-extrabold text-[#0a59c1]">
+                        Up to ₹2,000 off when you switch to WaveLink
+                    </span>
+<h1 class="mt-4 font-display text-4xl font-extrabold leading-tight text-brand-navy md:text-5xl">
+                        Free installation on India's most reliable fibre
+                    </h1>
+<p class="mt-5 flex flex-wrap items-baseline gap-x-2 text-brand-ink">
+<span class="text-lg font-bold">Fibre 300 for</span>
+<span class="font-display text-4xl font-extrabold text-brand-blue">₹799</span>
+<span class="text-lg font-bold">a month</span>
+<span class="rounded-full bg-[#e6f3ff] px-2.5 py-0.5 text-xs font-extrabold text-[#0a59c1]">
+                            for 6 months, then ₹999
+                        </span>
+</p>
+<p class="mt-3 max-w-xl text-sm leading-relaxed text-brand-muted">
+                        12-month plan. Up to ₹2,000 towards your old provider's exit fee, given as bill credit.
+                    </p>
+<form class="mt-6 max-w-lg rounded-2xl border border-solid border-slate-200/70 bg-white p-6 shadow-[0_20px_50px_-12px_rgba(15,40,80,0.22)]" id="pin-form" novalidate="">
+<label class="mb-3 block text-sm font-extrabold" for="pin-input">Enter your PIN code</label>
+<div class="flex flex-col gap-3 sm:flex-row">
+<div class="relative w-full flex-1">
+<input aria-describedby="pin-msg" autocomplete="postal-code" class="h-12 w-full appearance-none rounded-[10px] border border-solid border-[#cbd9e8] bg-white pl-4 pr-11 outline-none transition focus:border-brand-blue focus:ring-4 focus:ring-blue-100" id="pin-input" inputmode="numeric" maxlength="6" pattern="[0-9]{6}" placeholder="e.g. 627001" type="text"/>
+<button aria-label="Clear PIN code" class="absolute right-3 top-1/2 hidden h-6 w-6 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border-0 bg-slate-200 p-0 text-base leading-none text-slate-600 transition hover:bg-slate-300" id="pin-clear" type="button">
+                                    ×
+                                </button>
+</div>
+<button class="inline-flex h-12 items-center justify-center whitespace-nowrap rounded-[10px] border-0 bg-brand-blue px-6 font-extrabold text-white shadow-md shadow-blue-600/25 outline-none transition hover:-translate-y-0.5 hover:bg-brand-dark hover:shadow-lg focus-visible:ring-4 focus-visible:ring-blue-200" type="submit">
+                                See your plans
+                            </button>
+</div>
+<p aria-live="polite" class="mt-3 text-sm font-bold empty:hidden" id="pin-msg"></p>
+</form>
+</div>
+<div class="flex flex-col justify-center rounded-3xl bg-gradient-to-br from-brand-navy via-[#10478e] to-brand-blue p-8 text-center text-white shadow-xl">
+<div class="font-display text-7xl font-extrabold leading-none text-brand-cyan md:text-8xl">300</div>
+<p class="mt-2 text-lg text-brand-soft">Mbps unlimited fibre</p>
+<p class="mt-3 text-sm text-[#d9e9ff]">Streaming, work calls and gaming together</p>
+<div class="mt-8 grid grid-cols-3 gap-3 text-sm">
+<div class="rounded-xl bg-white/10 px-2 py-3">
+<div class="font-extrabold text-brand-cyan">Free</div>
+<div class="text-[#d9e9ff]">installation</div>
+</div>
+<div class="rounded-xl bg-white/10 px-2 py-3">
+<div class="font-extrabold text-brand-cyan">Unlimited</div>
+<div class="text-[#d9e9ff]">data</div>
+</div>
+<div class="rounded-xl bg-white/10 px-2 py-3">
+<div class="font-extrabold text-brand-cyan">₹2,000</div>
+<div class="text-[#d9e9ff]">switch credit</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="py-10">
+<div class="mx-auto grid w-[90%] max-w-[1150px] items-center gap-10 md:grid-cols-2">
+<img alt="Family using a laptop at home" class="h-[320px] w-full rounded-[28px] object-cover" src="./assets/images/laptop.jpg"/>
+<div>
+<h2 class="text-brand-navy">Built on a fibre network that reaches your home</h2>
+<p class="text-brand-muted">Every connection is fibre to the home, not copper. That means steady
+                        speeds of up to 1 Gbps, even when the whole family is online at night.</p>
+<a class="inline-flex items-center justify-center rounded-[10px] bg-brand-blue px-5 py-3 font-extrabold text-white transition hover:-translate-y-0.5 hover:bg-brand-dark" href="#broadband-faq">Learn
+                        more about fibre</a>
+</div>
+</div>
+</section>
+
+<section class="py-10">
+<div class="mx-auto grid w-[90%] max-w-[1150px] items-center gap-10 md:grid-cols-2">
+<div class="md:order-1">
+<h2 class="text-brand-navy">Built to protect your family online</h2>
+<p class="text-brand-muted">Router-level protection blocks harmful websites on every device in your
+                        home. Parental controls and safe-browsing are included in every plan at no extra cost.</p>
+<a class="inline-flex items-center justify-center rounded-[10px] bg-brand-blue px-5 py-3 font-extrabold text-white transition hover:-translate-y-0.5 hover:bg-brand-dark" href="arcontact.html#contact">Learn
+                        more about security</a>
+</div>
+<img alt="Person using phone and laptop" class="h-[320px] w-full rounded-[28px] object-cover md:order-2" src="./assets/images/family-image1.jpg"/>
+</div>
+</section>
+
+<section class="py-10">
+<div class="mx-auto grid w-[90%] max-w-[1150px] items-center gap-10 md:grid-cols-2">
+<img alt="Technician visiting a home" class="h-[320px] w-full rounded-[28px] object-cover" src="./assets/images/localsupport.jpg"/>
+<div>
+<h2 class="text-brand-navy">Local support in Tamil, Hindi and English</h2>
+<p class="text-brand-muted">Our support team is based in India and answers 24x7. A trained
+                        technician visits you within 24 hours for installation and fixes, and helps with router setup
+                        and Wi-Fi tuning.</p>
+<a class="inline-flex items-center justify-center rounded-[10px] bg-brand-blue px-5 py-3 font-extrabold text-white transition hover:-translate-y-0.5 hover:bg-brand-dark" href="arcontact.html#contact">Learn
+                        more about support</a>
+</div>
+</div>
+</section>
+
+<section class="py-12">
+<div class="mx-auto w-[90%] max-w-[1150px]">
+<h2 class="mb-8 mt-1 text-brand-navy">How WaveLink works</h2>
+<ol class="m-0 grid list-none gap-5 p-0 sm:grid-cols-2 lg:grid-cols-4">
+<li class="group rounded-[18px] border border-solid border-brand-line bg-white p-6 transition duration-300 hover:-translate-y-1 hover:border-brand-blue hover:shadow-[0_18px_40px_-12px_rgba(15,40,80,0.25)] motion-reduce:transition-none motion-reduce:hover:translate-y-0">
+<span class="flex h-10 w-10 items-center justify-center rounded-full bg-brand-blue font-display text-lg font-extrabold text-white transition duration-300 group-hover:scale-110 group-hover:bg-brand-dark">1</span>
+<h3 class="mt-4 text-lg text-brand-navy">Check your PIN code</h3>
+<p class="mt-2 text-sm text-brand-muted">Enter your PIN code at the top of the page to see if
+                            fibre reaches your street.</p>
+</li>
+<li class="group rounded-[18px] border border-solid border-brand-line bg-white p-6 transition duration-300 hover:-translate-y-1 hover:border-brand-blue hover:shadow-[0_18px_40px_-12px_rgba(15,40,80,0.25)] motion-reduce:transition-none motion-reduce:hover:translate-y-0">
+<span class="flex h-10 w-10 items-center justify-center rounded-full bg-brand-blue font-display text-lg font-extrabold text-white transition duration-300 group-hover:scale-110 group-hover:bg-brand-dark">2</span>
+<h3 class="mt-4 text-lg text-brand-navy">Pick your plan</h3>
+<p class="mt-2 text-sm text-brand-muted">Search, filter and compare two plans side by side to
+                            find the right speed.</p>
+</li>
+<li class="group rounded-[18px] border border-solid border-brand-line bg-white p-6 transition duration-300 hover:-translate-y-1 hover:border-brand-blue hover:shadow-[0_18px_40px_-12px_rgba(15,40,80,0.25)] motion-reduce:transition-none motion-reduce:hover:translate-y-0">
+<span class="flex h-10 w-10 items-center justify-center rounded-full bg-brand-blue font-display text-lg font-extrabold text-white transition duration-300 group-hover:scale-110 group-hover:bg-brand-dark">3</span>
+<h3 class="mt-4 text-lg text-brand-navy">Free installation</h3>
+<p class="mt-2 text-sm text-brand-muted">A trained technician visits within 24 hours and sets up
+                            your router and Wi-Fi.</p>
+</li>
+<li class="group rounded-[18px] border border-solid border-brand-line bg-white p-6 transition duration-300 hover:-translate-y-1 hover:border-brand-blue hover:shadow-[0_18px_40px_-12px_rgba(15,40,80,0.25)] motion-reduce:transition-none motion-reduce:hover:translate-y-0">
+<span class="flex h-10 w-10 items-center justify-center rounded-full bg-brand-blue font-display text-lg font-extrabold text-white transition duration-300 group-hover:scale-110 group-hover:bg-brand-dark">4</span>
+<h3 class="mt-4 text-lg text-brand-navy">You're online</h3>
+<p class="mt-2 text-sm text-brand-muted">Stream, work and game on unlimited fibre, with local
+                            support 24x7.</p>
+</li>
+</ol>
+</div>
+</section>
+
+<section class="py-6">
+<div class="mx-auto w-[90%] max-w-[1150px] rounded-3xl bg-gradient-to-r from-[#0c315e] to-[#1670dc] p-8 text-white md:p-11">
+<h2 class="text-white">Get more with WaveLink Mobile</h2>
+<p class="max-w-xl text-[#e1efff]">Pair your home fibre with a WaveLink mobile plan. Enjoy 5G data,
+                    unlimited calls and bundle savings on both bills, all from one provider.</p>
+<a class="inline-flex items-center justify-center rounded-[10px] bg-white px-5 py-3 font-extrabold text-brand-navy transition hover:-translate-y-0.5" href="armobile.html">Explore
+                    Mobile Plans</a>
+</div>
+</section>
+
+<section class="py-16">
+<div class="mx-auto w-[90%] max-w-[1150px]">
+<div class="grid gap-5 md:grid-cols-3">
+<div class="flex flex-col items-start rounded-[18px] border border-brand-line bg-white p-6 transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+<h3 class="text-brand-navy">Switch to WaveLink</h3>
+<p class="text-brand-muted">Whichever provider you use now, switching to us takes about 3 days.
+                        </p>
+<a class="mt-auto inline-flex items-center rounded-[10px] bg-brand-blue px-5 py-3 font-extrabold text-white transition duration-200 hover:-translate-y-0.5 hover:bg-brand-dark hover:shadow-lg active:translate-y-0 focus:outline-none focus-visible:ring-4 focus-visible:ring-blue-300 motion-reduce:transition-none motion-reduce:hover:translate-y-0" href="arcontact.html#contact">Find
+                            out how to switch</a>
+</div>
+<div class="flex flex-col items-start rounded-[18px] border border-brand-line bg-white p-6 transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+<h3 class="text-brand-navy">Already with us?</h3>
+<p class="text-brand-muted">Pay bills, upgrade your plan or raise a complaint.</p>
+<a class="mt-auto inline-flex items-center rounded-[10px] bg-brand-blue px-5 py-3 font-extrabold text-white transition duration-200 hover:-translate-y-0.5 hover:bg-brand-dark hover:shadow-lg active:translate-y-0 focus:outline-none focus-visible:ring-4 focus-visible:ring-blue-300 motion-reduce:transition-none motion-reduce:hover:translate-y-0" href="arcontact.html#contact">Log
+                            in to My WaveLink</a>
+</div>
+<div class="flex flex-col items-start rounded-[18px] border border-brand-line bg-white p-6 transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+<h3 class="text-brand-navy">Need help?</h3>
+<p class="text-brand-muted">Read guides or contact our support team.</p>
+<a class="mt-auto inline-flex items-center rounded-[10px] bg-brand-blue px-5 py-3 font-extrabold text-white transition duration-200 hover:-translate-y-0.5 hover:bg-brand-dark hover:shadow-lg active:translate-y-0 focus:outline-none focus-visible:ring-4 focus-visible:ring-blue-300 motion-reduce:transition-none motion-reduce:hover:translate-y-0" href="contact.html#faqs">Go
+                            to broadband help</a>
+</div>
+</div>
+<div class="mt-6 rounded-3xl bg-brand-soft px-6 py-11 text-center">
+<h2 class="text-brand-navy">See what broadband plans you can get</h2>
+<p class="mx-auto text-brand-muted">Compare our latest offers and find the right plan for your home.
+                    </p>
+<a class="inline-flex items-center rounded-[10px] bg-brand-blue px-5 py-3 font-extrabold text-white transition duration-200 hover:-translate-y-0.5 hover:bg-brand-dark hover:shadow-lg active:translate-y-0 focus:outline-none focus-visible:ring-4 focus-visible:ring-blue-300 motion-reduce:transition-none motion-reduce:hover:translate-y-0" href="#plan-grid">See
+                        broadband plans</a>
+</div>
+</div>
+</section>
+
+<section class="py-16" id="explore">
+<div class="mx-auto w-[90%] max-w-[1150px]">
+<span class="text-xs font-extrabold uppercase tracking-[0.15em] text-brand-blue">Find your fit</span>
+<h2 class="mb-6 mt-1 text-brand-navy">Explore Packages</h2>
+<div class="grid grid-cols-[minmax(0,1fr)] gap-6 lg:grid-cols-[230px_minmax(0,1fr)] lg:items-start">
+
+<aside class="min-w-0">
+<p class="mb-3 text-sm font-extrabold text-brand-navy">Plan category</p>
+<div class="flex gap-2 overflow-x-auto pb-2 lg:flex-col lg:gap-0 lg:overflow-hidden lg:rounded-2xl lg:border lg:border-solid lg:border-brand-line lg:pb-0" id="category-list">
+</div>
+</aside>
+
+<div class="min-w-0">
+
+<div class="grid grid-cols-1 items-end gap-4 sm:grid-cols-2 xl:grid-cols-[1fr_1fr_1fr_auto]">
+
+<div class="col-span-full flex min-w-0 flex-col gap-2">
+<label class="text-sm font-bold text-brand-navy" for="plan-search">Search plans</label>
+<input class="h-12 w-full px-4 rounded-xl border border-solid border-slate-200 bg-white text-slate-800 placeholder-slate-400 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100" id="plan-search" placeholder="Search name or feature..." type="search"/>
+</div>
+<div class="flex min-w-0 flex-col gap-2">
+<label class="text-sm font-bold text-brand-navy" for="max-price">Max monthly
+                                    price</label>
+<div class="relative">
+<select class="h-12 w-full cursor-pointer appearance-none rounded-xl border border-brand-line bg-white pl-3.5 pr-10 text-brand-ink outline-brand-blue" id="max-price">
+<option value="">Any price</option>
+<option value="500">Up to ₹500</option>
+<option value="800">Up to ₹800</option>
+<option value="1000">Up to ₹1,000</option>
+<option value="1500">Up to ₹1,500</option>
+</select>
+<svg class="pointer-events-none absolute right-4 top-1/2 h-2 w-3 -translate-y-1/2 text-brand-muted" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 12 8">
+<path d="M1 1l5 5 5-5"></path>
+</svg>
+</div>
+</div>
+<div class="flex min-w-0 flex-col gap-2">
+<label class="text-sm font-bold text-brand-navy" for="min-speed">Minimum speed</label>
+<div class="relative">
+<select class="h-12 w-full cursor-pointer appearance-none rounded-xl border border-brand-line bg-white pl-3.5 pr-10 text-brand-ink outline-brand-blue" id="min-speed">
+<option value="">Any speed</option>
+<option value="100">100+ Mbps</option>
+<option value="300">300+ Mbps</option>
+<option value="500">500+ Mbps</option>
+<option value="1000">1 Gbps</option>
+</select>
+<svg class="pointer-events-none absolute right-4 top-1/2 h-2 w-3 -translate-y-1/2 text-brand-muted" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 12 8">
+<path d="M1 1l5 5 5-5"></path>
+</svg>
+</div>
+</div>
+<div class="flex min-w-0 flex-col gap-2">
+<label class="text-sm font-bold text-brand-navy" for="plan-sort">Sort by</label>
+<div class="relative">
+<select class="h-12 w-full cursor-pointer appearance-none rounded-xl border border-brand-line bg-white pl-3.5 pr-10 text-brand-ink outline-brand-blue" id="plan-sort">
+<option value="default">Recommended</option>
+<option value="price-asc">Price: Low to High</option>
+<option value="price-desc">Price: High to Low</option>
+<option value="speed-desc">Speed: High to Low</option>
+</select>
+<svg class="pointer-events-none absolute right-4 top-1/2 h-2 w-3 -translate-y-1/2 text-brand-muted" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 12 8">
+<path d="M1 1l5 5 5-5"></path>
+</svg>
+</div>
+</div>
+<button class="h-12 w-full cursor-pointer rounded-xl border border-brand-blue bg-transparent px-5 font-extrabold text-brand-blue transition hover:bg-brand-soft xl:w-auto" id="reset-filters" type="button">
+                                Reset
+                            </button>
+</div>
+
+<div class="mb-4 mt-6 flex flex-wrap items-center justify-between gap-2">
+<strong aria-live="polite" class="text-brand-navy" id="result-count"></strong>
+<span class="text-sm text-brand-muted">Prices in INR / month</span>
+</div>
+
+<div class="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3" id="plan-grid"></div>
+<div class="hidden rounded-2xl border border-dashed border-[#cbd9e8] bg-white p-8 text-center text-brand-muted" id="no-results">
+                            No plans match your filters. Try adjusting your search.
+                        </div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="hidden pb-16" id="compare">
+<div class="mx-auto w-[90%] max-w-[1150px]">
+<h2 class="mb-5 text-brand-navy">Compare Two Plans</h2>
+<div aria-live="polite" id="comparison"></div>
+</div>
+</section>
+
+<section class="pb-16" id="broadband-faq">
+<div class="mx-auto w-[90%] max-w-[820px]">
+<h2 class="mb-6 text-center text-brand-navy">More about WaveLink broadband</h2>
+<div class="grid gap-3">
+<details class="group rounded-2xl bg-brand-soft px-6 py-4">
+<summary class="flex cursor-pointer list-none items-center gap-4 font-extrabold text-brand-navy [&amp;::-webkit-details-marker]:hidden">
+<svg class="h-2 w-3 shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 12 8">
+<path d="M1 1l5 5 5-5"></path>
+</svg>
+                            What is WaveLink?
+                        </summary>
+<p class="mt-3 pl-7 text-sm leading-relaxed text-brand-muted">WaveLink is a fibre broadband
+                            service with unlimited data on every plan and speeds from 50 Mbps up to 1 Gbps. This is a
+                            student demo, so all plans and prices are fictional.</p>
+</details>
+<details class="group rounded-2xl bg-brand-soft px-6 py-4">
+<summary class="flex cursor-pointer list-none items-center gap-4 font-extrabold text-brand-navy [&amp;::-webkit-details-marker]:hidden">
+<svg class="h-2 w-3 shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 12 8">
+<path d="M1 1l5 5 5-5"></path>
+</svg>
+                            How does WaveLink fibre work?
+                        </summary>
+<p class="mt-3 pl-7 text-sm leading-relaxed text-brand-muted">A fibre cable runs all the way to
+                            your home and connects to a router. Fibre carries data as light, so speeds stay steady even
+                            when many devices are online.</p>
+</details>
+<details class="group rounded-2xl bg-brand-soft px-6 py-4">
+<summary class="flex cursor-pointer list-none items-center gap-4 font-extrabold text-brand-navy [&amp;::-webkit-details-marker]:hidden">
+<svg class="h-2 w-3 shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 12 8">
+<path d="M1 1l5 5 5-5"></path>
+</svg>
+                            Which speed do I need?
+                        </summary>
+<p class="mt-3 pl-7 text-sm leading-relaxed text-brand-muted">As a rough guide: 50 Mbps for 1–2
+                            people, 100 Mbps for a small family, 300 Mbps for streaming, work calls and gaming together,
+                            and 500 Mbps or more for large households.</p>
+</details>
+<details class="group rounded-2xl bg-brand-soft px-6 py-4">
+<summary class="flex cursor-pointer list-none items-center gap-4 font-extrabold text-brand-navy [&amp;::-webkit-details-marker]:hidden">
+<svg class="h-2 w-3 shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 12 8">
+<path d="M1 1l5 5 5-5"></path>
+</svg>
+                            How long does installation take?
+                        </summary>
+<p class="mt-3 pl-7 text-sm leading-relaxed text-brand-muted">Installation is free. A technician
+                            visits within 24 hours and helps with router setup and Wi-Fi tuning.</p>
+</details>
+<details class="group rounded-2xl bg-brand-soft px-6 py-4">
+<summary class="flex cursor-pointer list-none items-center gap-4 font-extrabold text-brand-navy [&amp;::-webkit-details-marker]:hidden">
+<svg class="h-2 w-3 shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 12 8">
+<path d="M1 1l5 5 5-5"></path>
+</svg>
+                            How do I switch from another provider?
+                        </summary>
+<p class="mt-3 pl-7 text-sm leading-relaxed text-brand-muted">Switching takes about 3 days. We
+                            give up to ₹2,000 towards your old provider's exit fee as bill credit.</p>
+</details>
+</div>
+</div>
+</section>
+
+<div aria-label="Plan details" aria-modal="true" class="modal-backdrop hidden" id="plan-modal" role="dialog">
+<div class="modal">
+<button aria-label="Close plan details" class="close-modal" id="close-modal">×</button>
+<div id="modal-content"></div>
+</div>
+</div>
+</main>
+
+<footer class="bg-[#F0F0F0] px-6 py-10">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-10" style="margin-left: 7%;">
+
+<div>
+<a aria-label="WaveLink home" href="afterreg.html"><img alt="WaveLink logo" src="images/wavelink-logo.png" style="height:55px;width:auto;max-width:190px;object-fit:contain"/></a>
+<p class="text-gray-500 mb-6">
+                    As a communications provider, using personal information is fundamental to what we do
+
+                </p>
+<div class="flex gap-4">
+<a class="bg-white w-10 h-10 rounded-lg flex items-center justify-center" href="https://www.instagram.com/wavelink_6?cplk=MXE0NmtkM2RsZmFhOQ==">
+<img alt="" class="w-12" src="images/instagram.png"/>
+</a>
+<a class="bg-white w-10 h-10 rounded-lg flex items-center justify-center" href="#">
+<img alt="" class="w-12" src="images/github-sign.png"/>
+</a>
+<a class="bg-white rounded-2xl w-11 h-11 flex items-center justify-center" href="https://www.facebook.com/share/1C3fV1Ym6u/">
+<img alt="" class="w-12" src="images/social-media.png"/>
+</a>
+
+</div>
+</div>
+
+<div>
+<h2 class="text-lg mb-8">COMPANY</h2>
+<ul class="space-y-5 text-gray-500">
+<li><a href="faq.html">About Us</a></li>
+<li><a href="faq.html#history">History of WL</a></li>
+<li><a href="faq.html#history">Works</a></li>
+<li><a href="faq.html#career">Career</a></li>
+</ul>
+<h2 class="text-lg mt-8 mb-8">EXPLORE</h2>
+<ul class="space-y-5 text-gray-500">
+<li><a href="arbroadband.html">Broadband</a></li>
+<li><a href="package.html">OTT</a></li>
+<li><a href="armobile.html">Mobile</a></li>
+<li><a href="index.html">Explore plans</a></li>
+</ul>
+</div>
+
+<div>
+<h1 class="text-lg mb-8">HELP</h1>
+<ul class="space-y-5 text-gray-500">
+<li><a href="faq.html">Help Centre</a></li>
+<li><a href="arcontact.html">Contact Us</a></li>
+<li><a href="faq.html">Query section</a></li>
+</ul>
+</div>
+
+<div>
+<h1 class="gap-10 text-lg mb-8">FAQ</h1>
+<ul class="space-y-5 text-gray-500">
+<li><a href="index.html">Account</a></li>
+<li><a href="faq.html#qanda">Q&amp;A</a></li>
+<li><a href="faq.html">Offers</a></li>
+<li><a href="faq.html">Collection</a></li>
+</ul>
+</div>
+</div>
+
+<div class="text-gray-600 px-6 md:px-16 py-10">
+<div class="border-t border-gray-300 pt-8">
+<p class="mb-8">
+                    © 2026 WaveLink. Made to bring us closer.
+                </p>
+<div class="flex flex-wrap gap-2">
+<a class="hover:text-white" href="#">Privacy</a>
+<span>·</span>
+<a class="hover:text-white" href="#">Terms</a>
+<span>·</span>
+<a class="hover:text-white" href="#">
+                        Accessibility
+                    </a>
+</div>
+</div>
+</div>
+</footer>
+
+<script>
+        var header = document.getElementById("header");
+        var menuBtn = document.getElementById("menuBtn");
+        var mobileMenu = document.getElementById("mobileMenu");
+        var mobileLinks = document.querySelectorAll(".mobile-link");
+
+        menuBtn.addEventListener("click", function () {
+            if (mobileMenu.classList.contains("hidden")) {
+                mobileMenu.classList.remove("hidden");
+                menuBtn.textContent = "✕";
+            } else {
+                mobileMenu.classList.add("hidden");
+                menuBtn.textContent = "☰";
+            }
+        });
+
+        for (let i = 0; i < mobileLinks.length; i++) {
+            mobileLinks[i].addEventListener("click", function () {
+                mobileMenu.classList.add("hidden");
+                menuBtn.textContent = "☰";
+            });
+        }
+
+        window.addEventListener("scroll", function () {
+            if (window.scrollY > 10) {
+                header.classList.add("shadow-md");
+            } else {
+                header.classList.remove("shadow-md");
+            }
+        });
+    </script>
+<script src="js/main.js"></script>
+<script src="js/broadband.js"></script>
+<script src="js/reveal.js"></script>
+</body>
+</html>
